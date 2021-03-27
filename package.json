@@ -26,5 +26,8 @@
     "gulp-sourcemaps": "^3.0.0",
     "webpack-stream": "^6.1.2",
     "yargs": "^16.2.0"
+  },
+  "dependencies": {
+    "postcss": "^8.2.8"
   }
 }

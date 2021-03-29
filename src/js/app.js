@@ -1,4 +1,5 @@
 import './components/slider';
+console.log('testing');
 
 // Wait until DOM is ready
 document.addEventListener('DOMContentLoaded', function (event) {

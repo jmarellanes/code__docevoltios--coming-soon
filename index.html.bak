@@ -44,6 +44,7 @@
 
     <main>
       <article>
+        <svg src="arrow.svg" class="inline-svg"></svg>
         <h1>my portfolio is in the oven</h1>
 
         <dl>

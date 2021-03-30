@@ -1,6 +1,8 @@
-//////////////////////////////////////////////////////////////////////
-// FONTS
-// SPACE MONO FAMILY
+/* =====================================================================
+  -> FONTS
+===================================================================== */
+///////////////////////////////////////////////////////////////////////
+//  SPACE MONO FAMILY
 @font-face {
   font-family: 'space-mono_regular';
   font-display: swap;
@@ -25,7 +27,8 @@
     url('../fonts/spacemono-bolditalic.ttf') format('truetype');
 }
 
-// BYORHYME FAMILY
+///////////////////////////////////////////////////////////////////////
+//  BYORHYME FAMILY
 @font-face {
   font-family: 'biorhyme_regular';
   font-display: swap;
@@ -34,7 +37,8 @@
     url('../fonts/biorhyme-regular.ttf') format('truetype');
 }
 
-// WORK SANS FAMILY
+///////////////////////////////////////////////////////////////////////
+//  WORK SANS FAMILY
 @font-face {
   font-family: 'worksans_regular';
   font-display: swap;
@@ -49,4 +53,23 @@
   src: url('../fonts/worksans-semibold.woff2') format('woff2'),
     url('../fonts/worksans-semibold.woff') format('woff'),
     url('../fonts/worksans-semibold.ttf') format('truetype');
+}
+
+/* =====================================================================
+  -> HEADINGS
+===================================================================== */
+h1 {
+  font-family: var(--font-headings);
+  font-size: dc_calculate-rem(112);
+  line-height: dc_calculate-lh(128, 112);
+  color: var(--color-secondary);
+  @include dc_text-properties;
+}
+
+h2 {
+  font-family: var(--font-headings);
+  font-size: dc_calculate-rem(64);
+  line-height: dc_calculate-lh(72, 64);
+  text-transform: uppercase;
+  @include dc_text-properties;
 }

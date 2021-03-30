@@ -1,6 +1,7 @@
 :root {
-  ///////////////////////////////////////////////////////////////////////
-  // COLOR PALETTE
+  /* =====================================================================
+    -> COLOR PALETTE
+  ===================================================================== */ ////////////
   // Primary
   --color-primary: hsl(247, 90%, 76%);
   --color-primary--light: hsl(247, 90%, 92%);
@@ -11,8 +12,9 @@
   --color-secondary--light: hsl(178, 90%, 90%);
   --color-secondary--dark: hsl(178, 90%, 10%);
 
-  ///////////////////////////////////////////////////////////////////////
-  // MARGINS AND PADDINGS
+  /* =====================================================================
+    -> MARGINS AND PADDINGS
+  ===================================================================== */
   // Base 16
   --spacer-4: 0.25rem;
   --spacer-8: 0.5rem;
@@ -33,12 +35,17 @@
   --spacer-208: 13rem;
   --spacer-256: 16rem;
 
-  ///////////////////////////////////////////////////////////////////////
-  // FONTS
+  /* =====================================================================
+    -> FONTS
+  ===================================================================== */
   --font-headings: 'biorhyme_regular', serif;
   --font-primary: 'worksans_regular', sans-serif;
   --font-primary--semibold: 'worksans_semibold', sans-serif;
   --font-secondary: 'space-mono_regular', monospace;
   --font-secondary--italic: 'space-mono_italic', monospace;
   --font-secondary--bold-italic: 'space-mono_bold-italic', monospace;
+
+  /* =====================================================================
+    -> MIX CSS CUSTOM PROPERTIES
+  ===================================================================== */
 } // -> :root

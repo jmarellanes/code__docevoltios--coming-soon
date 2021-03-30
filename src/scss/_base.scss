@@ -1,5 +1,6 @@
-///////////////////////////////////////////////////////////////////////
-// RESET
+/* =====================================================================
+  -> RESET
+===================================================================== */
 * {
   margin: 0;
   padding: 0;
@@ -13,28 +14,25 @@
 
 html {
   box-sizing: border-box;
-  font-size: 100%; // 1rem
+  font-size: 100%; // 1rem = 16px
   font-weight: normal;
 } //--> html
 
-///////////////////////////////////////////////////////////////////////
-// GENERAL RULES
+/* =====================================================================
+  -> GENERAL RULES
+===================================================================== */
 body {
   font-family: var(--font-primary);
   font-size: inherit;
   font-weight: inherit;
-  // line-height: fos_calculate-lh(24, 16);
+  line-height: fos_calculate-lh(24, 16);
   color: var(--color-secondary--light);
   background-color: var(--color-primary--dark);
 } //--> body
 
-h1 {
-  font-family: var(--font-headings);
-  font-weight: inherit;
-}
-
-///////////////////////////////////////////////////////////////////////
-// ACCESIBILITY HIDDEN
+/* =====================================================================
+  -> ACCESSIBLE HIDING
+===================================================================== */
 .visually-hidden {
   padding: 0;
   width: 1px;

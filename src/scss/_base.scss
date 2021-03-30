@@ -1,0 +1,48 @@
+///////////////////////////////////////////////////////////////////////
+// RESET
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 100%; // 1rem
+  font-weight: normal;
+} //--> html
+
+///////////////////////////////////////////////////////////////////////
+// GENERAL RULES
+body {
+  font-family: var(--font-main);
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: fos_calculate-lh(24, 16);
+  color: var(--color-secondary--light);
+  background-color: var(--color-primary--dark);
+} //--> body
+
+///////////////////////////////////////////////////////////////////////
+// ACCESIBILITY HIDDEN
+.visually-hidden {
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(0px 0px 99.9% 99.9%);
+  overflow: hidden;
+  border: 0;
+} //--> .visually-hidden
+
+///////////////////////////////////////////////////////////////////////
+// TEMP
+.contact-wrapper {
+  display: none;
+}

@@ -32,4 +32,13 @@
   --spacer-192: 12rem;
   --spacer-208: 13rem;
   --spacer-256: 16rem;
+
+  ///////////////////////////////////////////////////////////////////////
+  // FONTS
+  --font-headings: 'biorhyme_regular', serif;
+  --font-primary: 'worksans_regular', sans-serif;
+  --font-primary--semibold: 'worksans_semibold', sans-serif;
+  --font-secondary: 'space-mono_regular', monospace;
+  --font-secondary--italic: 'space-mono_italic', monospace;
+  --font-secondary--bold-italic: 'space-mono_bold-italic', monospace;
 } // -> :root

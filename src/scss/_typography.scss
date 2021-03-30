@@ -1,0 +1,52 @@
+//////////////////////////////////////////////////////////////////////
+// FONTS
+// SPACE MONO FAMILY
+@font-face {
+  font-family: 'space-mono_regular';
+  font-display: swap;
+  src: url('../fonts/spacemono-regular.woff2') format('woff2'),
+    url('../fonts/spacemono-regular.woff') format('woff'),
+    url('../fonts/spacemono-regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'space-mono_italic';
+  font-display: swap;
+  src: url('../fonts/spacemono-italic.woff2') format('woff2'),
+    url('../fonts/spacemono-italic.woff') format('woff'),
+    url('../fonts/spacemono-italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'space-mono_bold-italic';
+  font-display: swap;
+  src: url('../fonts/spacemono-bolditalic.woff2') format('woff2'),
+    url('../fonts/spacemono-bolditalic.woff') format('woff'),
+    url('../fonts/spacemono-bolditalic.ttf') format('truetype');
+}
+
+// BYORHYME FAMILY
+@font-face {
+  font-family: 'biorhyme_regular';
+  font-display: swap;
+  src: url('../fonts/biorhyme-regular.woff2') format('woff2'),
+    url('../fonts/biorhyme-regular.woff') format('woff'),
+    url('../fonts/biorhyme-regular.ttf') format('truetype');
+}
+
+// WORK SANS FAMILY
+@font-face {
+  font-family: 'worksans_regular';
+  font-display: swap;
+  src: url('../fonts/worksans-regular.woff2') format('woff2'),
+    url('../fonts/worksans-regular.woff') format('woff'),
+    url('../fonts/worksans-regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'worksans_semibold';
+  font-display: swap;
+  src: url('../fonts/worksans-semibold.woff2') format('woff2'),
+    url('../fonts/worksans-semibold.woff') format('woff'),
+    url('../fonts/worksans-semibold.ttf') format('truetype');
+}

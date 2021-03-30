@@ -25,7 +25,7 @@ body {
   font-family: var(--font-primary);
   font-size: inherit;
   font-weight: inherit;
-  line-height: fos_calculate-lh(24, 16);
+  line-height: dc_calculate-lh(24, 16);
   color: var(--color-secondary--light);
   background-color: var(--color-primary--dark);
 } //--> body
@@ -43,9 +43,3 @@ body {
   overflow: hidden;
   border: 0;
 } //--> .visually-hidden
-
-///////////////////////////////////////////////////////////////////////
-// TEMP
-.contact-wrapper {
-  display: none;
-}

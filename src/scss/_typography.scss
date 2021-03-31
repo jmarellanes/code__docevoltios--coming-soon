@@ -56,6 +56,16 @@
 }
 
 /* =====================================================================
+  -> GENERAL
+===================================================================== */
+body {
+  font-family: var(--font-primary);
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: dc_calculate-lh(24, 16);
+}
+
+/* =====================================================================
   -> HEADINGS
 ===================================================================== */
 h1 {
@@ -84,6 +94,40 @@ h2 {
     font-family: var(--font-secondary--italic);
     font-size: dc_calculate-rem(24);
     line-height: dc_calculate-lh(24, 24);
-    color: var(--color-primary);
+    @include dc_text-properties;
+  }
+}
+
+/* =====================================================================
+  -> MAIN
+===================================================================== */
+//////////////////////////////////////////////////////////////////////
+//  ACTIONS
+.actions {
+  font-size: dc_calculate-rem(18);
+  line-height: dc_calculate-lh(24, 18);
+  @include dc_text-properties;
+}
+
+/* =====================================================================
+  -> TESTIMONIAL
+===================================================================== */
+.testimonial {
+  font-family: var(--font-secondary--italic);
+  font-size: dc_calculate-rem(16);
+  line-height: dc_calculate-lh(24, 16);
+  @include dc_text-properties;
+
+  &__client {
+    font-family: var(--font-secondary--bold-italic);
+    font-size: dc_calculate-rem(14);
+    line-height: dc_calculate-lh(16, 14);
+    @include dc_text-properties;
+  }
+
+  &__url {
+    font-size: dc_calculate-rem(14);
+    line-height: dc_calculate-lh(16, 14);
+    @include dc_text-properties;
   }
 }

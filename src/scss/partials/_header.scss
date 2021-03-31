@@ -15,6 +15,10 @@
     &-mark {
       margin-right: var(--spacer-16);
     } // -> .nav-menu__brand-mark
+
+    &-text {
+      color: var(--color-primary);
+    } // -> .nav-menu__brand-text
   } // -> .nav-menu__brand
 } // -> .nav-menu
 

@@ -22,13 +22,9 @@ html {
   -> GENERAL RULES
 ===================================================================== */
 body {
-  font-family: var(--font-primary);
-  font-size: inherit;
-  font-weight: inherit;
-  line-height: dc_calculate-lh(24, 16);
   color: var(--color-secondary--light);
   background-color: var(--color-primary--dark);
-} //--> body
+} // -> body
 
 /* =====================================================================
   -> ACCESSIBLE HIDING
@@ -42,4 +38,4 @@ body {
   clip-path: inset(0px 0px 99.9% 99.9%);
   overflow: hidden;
   border: 0;
-} //--> .visually-hidden
+} // -> .visually-hidden

@@ -9,146 +9,149 @@
     <script src="js/app.js"></script>
   </head>
   <body>
-    <header class="header">
-      <div class="header__container .nav-menu">
-        <a href="#0" class="nav-menu__brand">
-          <svg src="brandmark.svg" class="nav-menu__brand-mark"></svg>
-          <span class="nav-menu__brand-text">DoceVoltios</span>
-        </a>
-        <!-- a > .nav-menu__brand -->
-
-        <div class="nav-social">
-          <a href="#" class="nav-social__icon-box">
-            <svg src="twitter.svg"></svg>
+    <div class="wrapper">
+      <header class="header">
+        <div class="header__container .nav-menu">
+          <a href="#0" class="nav-menu__brand">
+            <svg src="brandmark.svg" class="nav-menu__brand-mark"></svg>
+            <span class="nav-menu__brand-text">DoceVoltios</span>
           </a>
-          <!-- a > nav-social__icon-box -->
+          <!-- a > .nav-menu__brand -->
+
+          <div class="nav-social">
+            <a href="#" class="nav-social__icon-box">
+              <svg src="twitter.svg"></svg>
+            </a>
+            <!-- a > nav-social__icon-box -->
+          </div>
+          <!-- div > nav-social -->
         </div>
-        <!-- div > nav-social -->
-      </div>
-      <!-- div > .header__container .nav-menu -->
-    </header>
+        <!-- div > .header__container .nav-menu -->
+      </header>
 
-    <main class="main-wrapper">
-      <h1 class="main__title">my portfolio is in the oven</h1>
+      <main class="main-wrapper">
+        <h1 class="main__title">my portfolio is in the oven</h1>
 
-      <article class="actions">
-        <dl class="actions__container">
-          <dt class="actions__title">
-            and you're already here, so you can:
-          </dt>
-          <!-- dt > .actions__title -->
-          <dd class="actions__item-email">
-            Send me an email
-            <button class="button__primary">
-              <span>I'm available for work,</span>
-              <span class="visually-hidden">Click to contact me!</span>
-            </button>
-            <!-- button > .button__primary -->
-          </dd>
-          <!-- dd > actions__item-email -->
-          <dd class="actions__item-play">
-            Play a fun game that I coded
-            <!-- TODO: Accessibility for button -->
-            <button>
-              <svg src="sword.svg"></svg><svg src="gamepad.svg"></svg>
-            </button>
-            , or
-          </dd>
-          <!-- dd > .actions__item-play -->
-          <dd class="actions__item-read">
-            Read one of the nicest comments I've received about my work:
+        <article class="actions">
+          <dl class="actions__container">
+            <dt class="actions__title">
+              and you're already here, so you can:
+            </dt>
+            <!-- dt > .actions__title -->
+            <dd class="actions__item-email">
+              Send me an email
+              <button class="button__primary">
+                <span>I'm available for work,</span>
+                <span class="visually-hidden">Click to contact me!</span>
+              </button>
+              <!-- button > .button__primary -->
+            </dd>
+            <!-- dd > actions__item-email -->
+            <dd class="actions__item-play">
+              Play a fun game that I coded
+              <!-- TODO: Accessibility for button -->
+              <button>
+                <svg src="sword.svg"></svg><svg src="gamepad.svg"></svg>
+              </button>
+              , or
+            </dd>
+            <!-- dd > .actions__item-play -->
+            <dd class="actions__item-read">
+              Read one of the nicest comments I've received about my work:
 
-            <figure class="testimonial">
-              <blockquote class="testimonial__quote">
-                "This time Jose did his best work yet - I've never encountered
-                anyone with such skill and imagination both in the design and
-                coding side. So glad he's there making our sites look
-                incredible!"
-              </blockquote>
-              <!-- blockquote > .testimonial__quote -->
-              <!-- prettier-ignore -->
-              <figcaption class="testimonial__client">
+              <figure class="testimonial">
+                <blockquote class="testimonial__quote">
+                  "This time Jose did his best work yet - I've never encountered
+                  anyone with such skill and imagination both in the design and
+                  coding side. So glad he's there making our sites look
+                  incredible!"
+                </blockquote>
+                <!-- blockquote > .testimonial__quote -->
+                <!-- prettier-ignore -->
+                <figcaption class="testimonial__client">
                 Rob Kay, <cite class="testimonial__client-url">Freedom Online Services</cite>
               </figcaption>
-              <!-- figcaption > .testimonial__client -->
-            </figure>
-            <!-- figure > .testimonial -->
-          </dd>
-          <!-- dd > .actions__item-read -->
-        </dl>
-        <!-- dl > .actions__container -->
+                <!-- figcaption > .testimonial__client -->
+              </figure>
+              <!-- figure > .testimonial -->
+            </dd>
+            <!-- dd > .actions__item-read -->
+          </dl>
+          <!-- dl > .actions__container -->
+        </article>
+      </main>
+      <!-- .main-wrapper -->
+
+      <aside class="images-wrapper">
+        <div class="images__container"><h2>Images Here</h2></div>
+      </aside>
+
+      <article class="contact-wrapper">
+        <h2>Have a Project</h2>
+
+        <section class="text-inputs-section">
+          <form>
+            <label for="first-name">Hiya, José Manuel! My name is</label>
+            <input
+              id="first-name"
+              type="text"
+              name="textfield"
+              placeholder="your name"
+              aria-describedby="required-message"
+              required
+            />
+
+            <label for="help">I'm contacting you to help me with</label>
+            <textarea
+              id="help"
+              name="contacthelp"
+              placeholder="short project description"
+              aria-describedby="required-message"
+              required
+            ></textarea>
+
+            <label for="last-name" class="required-field">Last Name</label>
+            <input
+              id="last-name"
+              type="text"
+              name="textfield"
+              aria-describedby="required-message"
+              required
+            />
+            <div id="required-message" class="visuallyhidden">
+              This field is required.
+            </div>
+
+            <label for="username">Username</label>
+            <input
+              id="username"
+              type="text"
+              name="textfield"
+              aria-describedby="username-help-text"
+              aria-invalid="true"
+            />
+            <span id="username-help-text"
+              >There was an error with the input above.</span
+            >
+
+            <label for="city">City</label>
+            <input
+              id="city"
+              type="text"
+              name="textfield"
+              aria-describedby="city-help-text"
+              aria-invalid="false"
+            />
+            <span id="city-help-text">The input above is successful.</span>
+
+            <label for="address">Enter your street address</label> -
+            <textarea id="address" name="addresstext"></textarea>
+
+            <input type="submit" value="Submit" />
+          </form>
+        </section>
       </article>
-    </main>
-    <!-- .main-wrapper -->
-
-    <aside class="images-wrapper">
-      <div class="images__container"><h2>Images Here</h2></div>
-    </aside>
-
-    <article class="contact-wrapper">
-      <h2>Have a Project</h2>
-
-      <section class="text-inputs-section">
-        <form>
-          <label for="first-name">Hiya, José Manuel! My name is</label>
-          <input
-            id="first-name"
-            type="text"
-            name="textfield"
-            placeholder="your name"
-            aria-describedby="required-message"
-            required
-          />
-
-          <label for="help">I'm contacting you to help me with</label>
-          <textarea
-            id="help"
-            name="contacthelp"
-            placeholder="short project description"
-            aria-describedby="required-message"
-            required
-          ></textarea>
-
-          <label for="last-name" class="required-field">Last Name</label>
-          <input
-            id="last-name"
-            type="text"
-            name="textfield"
-            aria-describedby="required-message"
-            required
-          />
-          <div id="required-message" class="visuallyhidden">
-            This field is required.
-          </div>
-
-          <label for="username">Username</label>
-          <input
-            id="username"
-            type="text"
-            name="textfield"
-            aria-describedby="username-help-text"
-            aria-invalid="true"
-          />
-          <span id="username-help-text"
-            >There was an error with the input above.</span
-          >
-
-          <label for="city">City</label>
-          <input
-            id="city"
-            type="text"
-            name="textfield"
-            aria-describedby="city-help-text"
-            aria-invalid="false"
-          />
-          <span id="city-help-text">The input above is successful.</span>
-
-          <label for="address">Enter your street address</label> -
-          <textarea id="address" name="addresstext"></textarea>
-
-          <input type="submit" value="Submit" />
-        </form>
-      </section>
-    </article>
+    </div>
+    <!-- .wrapper -->
   </body>
 </html>

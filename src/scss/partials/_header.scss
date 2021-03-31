@@ -1,0 +1,23 @@
+/* =====================================================================
+  -> HEADER
+===================================================================== */
+.header {
+  &__container {
+    margin-right: var(--spacer-32);
+  }
+}
+///////////////////////////////////////////////////////////////////////
+//  NAV
+.nav-menu {
+  &__brand {
+    text-decoration: none;
+
+    &-mark {
+      margin-right: var(--spacer-16);
+    } // -> .nav-menu__brand-mark
+  } // -> .nav-menu__brand
+} // -> .nav-menu
+
+.nav-social {
+  margin-left: auto;
+} // -> .nav-social

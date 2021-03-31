@@ -73,3 +73,17 @@ h2 {
   text-transform: uppercase;
   @include dc_text-properties;
 }
+
+/* =====================================================================
+  -> HEADER
+===================================================================== */
+//////////////////////////////////////////////////////////////////////
+//  NAV
+.nav-menu {
+  &__brand-text {
+    font-family: var(--font-secondary--italic);
+    font-size: dc_calculate-rem(24);
+    line-height: dc_calculate-lh(24, 24);
+    color: var(--color-primary);
+  }
+}

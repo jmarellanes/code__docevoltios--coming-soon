@@ -70,8 +70,8 @@ body {
 ===================================================================== */
 h1 {
   font-family: var(--font-headings);
-  font-size: dc_calculate-rem(112);
-  line-height: dc_calculate-lh(128, 112);
+  font-size: dc_calculate-rem(108);
+  line-height: dc_calculate-lh(128, 108);
   color: var(--color-secondary);
   @include dc_text-properties;
 }

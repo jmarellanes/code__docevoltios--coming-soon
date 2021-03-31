@@ -53,32 +53,32 @@
 /* =====================================================================
   -> MAIN
 ===================================================================== */
-.main-wrapper {
+.main {
   grid-row: 2 / 3;
   grid-column: grid-start / 10;
 
   z-index: 2;
-} // -> .main-wrapper
+} // -> .main
 
 /* =====================================================================
   -> IMAGES
 ===================================================================== */
-.images-wrapper {
+.images {
   grid-row: 1 / 3;
   grid-column: 10 / -1;
 
   z-index: 1;
   background: aquamarine;
-} // -> .images-wrapper
+} // -> .images
 
 /* =====================================================================
   -> CONTACT
 ===================================================================== */
-.contact-wrapper {
+.contact {
   grid-row: 1 /3;
   grid-column: 8 / -1;
 
   z-index: 4;
   background: mintcream;
   display: none;
-} // -> .contact-wrapper
+} // -> .contact

@@ -13,7 +13,8 @@
     text-decoration: none;
 
     &-mark {
-      margin-right: var(--spacer-16);
+      height: 1.5rem;
+      margin-right: var(--spacer-8);
     } // -> .nav-menu__brand-mark
 
     &-text {

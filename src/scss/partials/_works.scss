@@ -1,0 +1,26 @@
+/* =====================================================================
+  -> WORKS
+===================================================================== */
+///////////////////////////////////////////////////////////////////////
+//  ANIMATIONS
+// prettier-ignore
+@keyframes infinite-scoll-Y {
+  from { background-position: left 0; }
+  to { background-position: left -1385px; }
+}
+
+///////////////////////////////////////////////////////////////////////
+//  WORKS
+.works {
+  height: 100vh;
+
+  // TODO: Edit portfolio.png image and add the rest of the portfolio items.
+  &__container {
+    height: 100%;
+    background-image: url('../images/portfolio.png');
+    background-repeat: repeat-y;
+    background-position: left bottom;
+    animation: infinite-scoll-Y 120s linear infinite;
+    animation-play-state: paused;
+  } // -> .works__container
+} // -> .works

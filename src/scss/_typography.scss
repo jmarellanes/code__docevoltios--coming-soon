@@ -71,7 +71,7 @@ body {
 h1 {
   font-family: var(--font-headings);
   font-size: dc_calculate-rem(108);
-  line-height: dc_calculate-lh(128, 108);
+  line-height: dc_calculate-lh(120, 108);
   color: var(--color-secondary);
   @include dc_text-properties;
 }
@@ -112,6 +112,7 @@ h2 {
   font-family: var(--font-secondary--italic);
   font-size: dc_calculate-rem(16);
   line-height: dc_calculate-lh(24, 16);
+  color: var(--color-secondary);
   @include dc_text-properties;
 
   &__client {

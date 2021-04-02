@@ -5,6 +5,8 @@
   margin-right: var(--spacer-32);
 } // -> .main
 
+///////////////////////////////////////////////////////////////////////
+//  ACTIONS
 .actions {
   &__title {
     margin-top: 1.5rem;
@@ -13,12 +15,6 @@
 
   &__list-title {
     margin-bottom: 1.5rem;
-  }
-
-  &__container {
-    // display: flex;
-    // justify-content: center;
-    // flex-direction: column;
   }
 
   &__item {

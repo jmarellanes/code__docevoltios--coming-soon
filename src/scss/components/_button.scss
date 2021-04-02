@@ -1,0 +1,100 @@
+/* =====================================================================
+  -> BUTTON
+===================================================================== */
+// Fix for detecting 'click' events on SVG in <button>.
+button > * {
+  pointer-events: none;
+}
+
+///////////////////////////////////////////////////////////////////////
+//  ANIMATIONS
+@include animation-path(line-in-available, 330, 0);
+@include animation-path(line-out-available, 0, 330);
+@include animation-path(line-in-play, 230, 0);
+@include animation-path(line-out-play, 0, 230);
+
+///////////////////////////////////////////////////////////////////////
+//  BUTTON
+// TODO: Refactor HTML and CSS to eliminate .button__svg-line--primay and .button__svg-line--secondary and use .button__primary and .button__secondary
+.button {
+  $line-pos-bottom: 10px;
+  $line-pos-left: 5px;
+
+  position: relative;
+  background-color: transparent;
+  border: none;
+  color: var(--color-secondary);
+
+  margin: 0 1rem;
+  padding: 0 1rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: $line-pos-bottom;
+    left: $line-pos-left;
+
+    height: 4px;
+    width: 1.5rem;
+    background-color: var(--color-secondary--light);
+  } // -> .button::before
+
+  &__secondary {
+    margin-right: 0;
+
+    &--icon:nth-last-child(2) {
+      margin-left: 8px;
+    }
+
+    &::before {
+      bottom: calc(#{$line-pos-bottom} - 4px);
+    }
+  }
+
+  &__svg-line {
+    position: absolute;
+    left: $line-pos-left;
+
+    path {
+      stroke: var(--color-secondary--light);
+    }
+
+    &--primary {
+      bottom: $line-pos-bottom;
+
+      path {
+        stroke-dasharray: 330;
+        stroke-dashoffset: 330;
+        animation: line-out-available 450ms var(--easing--xl) forwards;
+      } // -> .button__svg-line--path
+    }
+
+    &--secondary {
+      bottom: calc(#{$line-pos-bottom} - 4px);
+
+      path {
+        stroke-dasharray: 230;
+        stroke-dashoffset: 230;
+        animation: line-out-play 350ms var(--easing--s) forwards;
+      } // -> .button__svg-line--path
+    }
+  } // -> .button__svg-line
+
+  &:hover {
+    .button {
+      &__svg-line {
+        &--primary {
+          path {
+            animation: line-in-available 450ms var(--easing--xl) forwards;
+          }
+        }
+
+        &--secondary {
+          path {
+            animation: line-in-play 350ms var(--easing--s) forwards;
+          }
+        }
+      } // -> button:hover .button__svg-line
+    } // -> button:hover .button
+  } // ->  button:hover
+} // -> .button

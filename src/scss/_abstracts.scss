@@ -6,6 +6,16 @@
   font-style: normal;
 }
 
+@mixin animation-path($name, $from, $to) {
+  @keyframes #{$name} {
+    from {
+      stroke-dashoffset: $from;
+    }
+    to {
+      stroke-dashoffset: $to;
+    }
+  }
+}
 /* =====================================================================
   -> FUNCTIONS
 ===================================================================== */

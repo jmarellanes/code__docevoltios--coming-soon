@@ -40,18 +40,28 @@
             <!-- dt > .actions__title -->
             <dd class="actions__item actions__item--email">
               Send me an email
-              <button class="button__primary">
+              <button class="button button__primary">
                 <span>I'm available for work,</span>
+                <svg
+                  src="line__available.svg"
+                  class="button__svg-line button__svg-line--primary"
+                ></svg>
                 <span class="visually-hidden">Click to contact me!</span>
               </button>
-              <!-- button > .button__primary -->c
+              <!-- button > .button__primary -->
             </dd>
             <!-- dd > actions__item-email -->
             <dd class="actions__item actions__item--play">
               Play a fun game that I coded
               <!-- TODO: Accessibility for button -->
-              <button>
-                <svg src="sword.svg"></svg><svg src="gamepad.svg"></svg>
+              <button class="button button__secondary">
+                <svg
+                  src="line__play.svg"
+                  class="button__svg-line button__svg-line--secondary"
+                ></svg>
+                <svg src="gamepad.svg" class="button__secondary--icon"></svg>
+                <svg src="sword.svg" class="button__secondary--icon"></svg>
+                <span class="visually-hidden">Click to play a game!</span>
               </button>
               , or
             </dd>

@@ -83,7 +83,6 @@
   grid-column: 10 / -1;
 
   z-index: 1;
-  background: aquamarine;
 } // -> .images
 
 /* =====================================================================
@@ -94,8 +93,7 @@
   grid-column: 8 / -1;
 
   z-index: 4;
-  background: mintcream;
-  display: none;
+  // display: none;
 } // -> .contact
 
 /* =====================================================================

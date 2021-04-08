@@ -1,0 +1,110 @@
+// TODO: Move font rules to _typography.scss
+// TODO: Move layout rules to _layout.scss
+// Form reset -- Making all elements looks the same on different brosers.
+.form {
+  &__field {
+    background-color: var(--color-primary);
+    border: none;
+    padding: 0.2rem 0.25rem 0.25rem 0;
+
+    font-family: inherit;
+    color: var(--color-secondary--lighter);
+
+    // fallback for issue on mobile iOS where if the field text is not at least 16 pixels, it will cause a zoom into the field.
+    font-size: 18px;
+    // Capitalized to prevent Sass thinking it's the Sass max()
+    font-size: Max(18px, 1.125rem);
+
+    max-width: 100%;
+
+    &:not(input) {
+      line-height: inherit;
+      height: 5rem;
+    }
+
+    &::placeholder {
+      color: var(--color-primary--dark);
+      transition: 250ms color var(--easing--s);
+      opacity: 1;
+    }
+  } // -> .form__field
+
+  &__button {
+    border: none;
+    background-color: transparent;
+    font-family: var(--font-secondary);
+    font-size: dc_calculate-rem(20);
+    text-transform: uppercase;
+    padding: 0;
+    cursor: pointer;
+
+    @media screen and (-ms-high-contrast: active) {
+      border: 2px solid currentColor;
+    }
+  } // -> .form__button
+} // -> .form -> Reset End
+
+.contact {
+  background: var(--color-primary);
+  padding: 7rem 6rem 0;
+
+  &__title {
+    margin-bottom: 4rem;
+  }
+}
+
+.form {
+  &__group {
+    margin-top: 1rem;
+
+    &:nth-last-child(2) {
+      margin-top: 3rem;
+    }
+
+    &:last-child {
+      margin-top: 2rem;
+    }
+  } // -> form__group
+
+  &__container {
+    display: flex;
+
+    &--area {
+      display: block;
+    } // -> form__container--area
+
+    label {
+      font-size: dc_calculate-rem(18);
+      color: var(--color-secondary--lighter);
+      white-space: nowrap;
+    } // -> form__container label
+
+    textarea {
+      min-width: 100%;
+    } // -> form__container textarea
+  } // -> form__container
+
+  &__field {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--color-primary--dark);
+    color: var(--color-secondary--lighter);
+    transition: 250ms all var(--easing--s);
+    transition-property: border, color;
+
+    &:not(textarea) {
+      margin-left: 0.5rem;
+    }
+
+    &:focus {
+      border-bottom: 1px solid var(--color-secondary--lighter);
+      outline: 2px solid transparent;
+      color: var(--color-secondary--lighter);
+      // transition-property: color;
+
+      &::placeholder {
+        color: var(--color-secondary--lighter);
+      }
+    }
+  }
+} // -> form

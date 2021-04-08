@@ -98,70 +98,78 @@
       </aside>
 
       <article class="contact">
-        <h2>Have a Project</h2>
+        <h2 class="contact__title">Have a Project?</h2>
 
-        <section class="text-inputs-section">
-          <form>
-            <label for="first-name">Hiya, José Manuel! My name is</label>
-            <input
-              id="first-name"
-              type="text"
-              name="textfield"
-              placeholder="your name"
-              aria-describedby="required-message"
-              required
-            />
-
-            <label for="help">I'm contacting you to help me with</label>
-            <textarea
-              id="help"
-              name="contacthelp"
-              placeholder="short project description"
-              aria-describedby="required-message"
-              required
-            ></textarea>
-
-            <label for="last-name" class="required-field">Last Name</label>
-            <input
-              id="last-name"
-              type="text"
-              name="textfield"
-              aria-describedby="required-message"
-              required
-            />
-            <div id="required-message" class="visuallyhidden">
-              This field is required.
+        <form class="form">
+          <div class="form__group">
+            <div class="form__container">
+              <label for="full-name">Hiya, José Manuel! My name is</label>
+              <input
+                type="text"
+                class="form__field"
+                id="full-name"
+                name="full-name"
+                placeholder="your name"
+              />
             </div>
+            <div class="form__mesagges visually-hidden">
+              <span class="form__mesagges--required"
+                >This field is required.</span
+              >
+              <span class="form__mesagges--successful"
+                >The input above is successful.</span
+              >
+              <span class="form__mesagges--error"
+                >There was an error with the input above.</span
+              >
+            </div>
+          </div>
 
-            <label for="username">Username</label>
-            <input
-              id="username"
-              type="text"
-              name="textfield"
-              aria-describedby="username-help-text"
-              aria-invalid="true"
-            />
-            <span id="username-help-text"
-              >There was an error with the input above.</span
-            >
+          <div class="form__group">
+            <div class="form__container form__container--area">
+              <label for="contact-help"
+                >I'm contacting you to help me with</label
+              >
+              <textarea
+                class="form__field"
+                id="contact-help"
+                name="contact-help"
+                placeholder="short project description"
+              ></textarea>
+            </div>
+          </div>
 
-            <label for="city">City</label>
-            <input
-              id="city"
-              type="text"
-              name="textfield"
-              aria-describedby="city-help-text"
-              aria-invalid="false"
-            />
-            <span id="city-help-text">The input above is successful.</span>
+          <div class="form__group">
+            <div class="form__container">
+              <label for="email">You can reach me at</label>
+              <input
+                type="email"
+                class="form__field"
+                id="email"
+                name="email"
+                placeholder="email"
+              />
+            </div>
+          </div>
 
-            <label for="address">Enter your street address</label> -
-            <textarea id="address" name="addresstext"></textarea>
+          <div class="form__group">
+            <div class="form__container form__container--area">
+              <label for="additional-notes">Additional notes:</label>
+              <textarea
+                class="form__field"
+                id="additional-notes"
+                name="additional-notes"
+                placeholder="anything else you want to include"
+              ></textarea>
+            </div>
+          </div>
 
-            <input type="submit" value="Submit" />
-          </form>
-        </section>
+          <div class="form__group">
+            <button type="submit" class="form__button">Send</button>
+          </div>
+        </form>
       </article>
+      <!-- .contact -->
     </div>
     <!-- .wrapper -->
   </body>

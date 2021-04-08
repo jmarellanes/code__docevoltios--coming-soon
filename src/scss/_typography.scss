@@ -78,9 +78,9 @@ h1 {
 
 h2 {
   font-family: var(--font-headings);
-  font-size: dc_calculate-rem(64);
-  line-height: dc_calculate-lh(72, 64);
-  text-transform: uppercase;
+  font-size: dc_calculate-rem(60);
+  line-height: dc_calculate-lh(72, 60);
+  color: var(--color-secondary--lighter);
   @include dc_text-properties;
 }
 

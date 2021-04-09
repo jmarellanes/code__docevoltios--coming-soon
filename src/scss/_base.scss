@@ -26,6 +26,12 @@ body {
   background-color: var(--color-primary--dark);
 } // -> body
 
+.header,
+.main,
+.works {
+  filter: blur(10px);
+}
+
 /* =====================================================================
   -> ACCESSIBLE HIDING
 ===================================================================== */

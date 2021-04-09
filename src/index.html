@@ -100,68 +100,59 @@
       <article class="contact">
         <h2 class="contact__title">Have a Project?</h2>
 
-        <form class="form">
+        <form class="form validate">
           <div class="form__group">
-            <div class="form__container">
-              <label for="full-name">Hiya, José Manuel! My name is</label>
+            <label for="full-name">Hey, José Manuel! My name is</label>
+            <span class="form__container-field">
               <input
                 type="text"
                 class="form__field"
                 id="full-name"
                 name="full-name"
                 placeholder="your name"
+                required
               />
-            </div>
-            <div class="form__mesagges visually-hidden">
-              <span class="form__mesagges--required"
-                >This field is required.</span
-              >
-              <span class="form__mesagges--successful"
-                >The input above is successful.</span
-              >
-              <span class="form__mesagges--error"
-                >There was an error with the input above.</span
-              >
-            </div>
+            </span>
           </div>
 
-          <div class="form__group">
-            <div class="form__container form__container--area">
-              <label for="contact-help"
-                >I'm contacting you to help me with</label
-              >
+          <div class="form__group form__group--area">
+            <label for="contact-help">I'm contacting you to help me with</label>
+            <span class="form__container-field">
               <textarea
                 class="form__field"
                 id="contact-help"
                 name="contact-help"
                 placeholder="short project description"
+                required
               ></textarea>
-            </div>
+            </span>
           </div>
 
           <div class="form__group">
-            <div class="form__container">
-              <label for="email">You can reach me at</label>
+            <label for="email">Get in touch with me at</label>
+            <span class="form__container-field">
               <input
                 type="email"
                 class="form__field"
                 id="email"
                 name="email"
-                placeholder="email"
+                placeholder="your email"
+                pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$"
+                required
               />
-            </div>
+            </span>
           </div>
 
-          <div class="form__group">
-            <div class="form__container form__container--area">
-              <label for="additional-notes">Additional notes:</label>
+          <div class="form__group form__group--area">
+            <label for="additional-notes">Additional notes:</label>
+            <span class="form__container-field">
               <textarea
                 class="form__field"
                 id="additional-notes"
                 name="additional-notes"
                 placeholder="anything else you want to include"
               ></textarea>
-            </div>
+            </span>
           </div>
 
           <div class="form__group">

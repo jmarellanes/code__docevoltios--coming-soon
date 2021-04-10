@@ -29,7 +29,12 @@ body {
 .header,
 .main,
 .works {
-  filter: blur(10px);
+  filter: blur(0);
+  transition: filter 600ms var(--easing--s);
+
+  &--blurred {
+    filter: blur(24px);
+  }
 }
 
 /* =====================================================================

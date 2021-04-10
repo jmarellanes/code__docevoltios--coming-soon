@@ -197,6 +197,7 @@ function validateForm() {
   };
 
   // Listen to all blur events
+  // TODO: Listen events only on article.contact
   document.addEventListener(
     'blur',
     function (event) {

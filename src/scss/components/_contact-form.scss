@@ -45,9 +45,20 @@
 } // -> .form -> Reset End
 
 .contact {
+  // Workaround to use rgba with CSS Custom Properties
   --primary-dark: 17, 6, 107; // RGB value for --color-primary--dark
   --color-bg-form: rgba(var(--primary-dark), 0.7);
-  background-color: var(--color-bg-form);
+  // background-color: var(--color-bg-form);
+
+  overflow: hidden;
+  opacity: 0;
+  z-index: 0;
+  transition: opacity 300ms var(--easing--s);
+
+  &--active {
+    opacity: 1;
+    z-index: 4;
+  } // -> .contact__active
 
   &-container {
     height: 100%;
@@ -56,6 +67,12 @@
 
     background: var(--color-primary);
     padding: 7rem 6rem 0;
+    transform: translateX(44rem);
+    transition: transform 600ms var(--easing--s);
+
+    &--active {
+      transform: translateX(0);
+    }
 
     &__title {
       margin-bottom: 4rem;

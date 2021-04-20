@@ -73,16 +73,19 @@
     &--active {
       transform: translateX(0);
     }
-
-    &__title {
-      margin-bottom: 4rem;
-    } // -> contact__title
   } // -> contact-container
+
+  &__title {
+    margin-bottom: 4rem;
+  } // -> contact__title
 } // -> contact
 
 .form {
   &__group {
     display: flex;
+
+    position: relative;
+    z-index: 1;
 
     margin-top: 1rem;
 

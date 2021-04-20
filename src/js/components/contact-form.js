@@ -4,6 +4,7 @@ function validateForm() {
 
   // Add the novalidate attribute when the JS loads
   const forms = document.querySelectorAll('.validate');
+  const form = document.querySelector('.form');
 
   for (var i = 0; i < forms.length; i++) {
     forms[i].setAttribute('novalidate', true);
@@ -201,8 +202,16 @@ function validateForm() {
   document.addEventListener(
     'blur',
     function (event) {
+      const formCheck = event.target.form;
+
       // Only run if the field is in a form to be validated
-      if (!event.target.form.classList.contains('validate')) return;
+      if (
+        formCheck === null ||
+        formCheck === undefined ||
+        formCheck === '' ||
+        !formCheck.classList.contains('validate')
+      )
+        return;
 
       // Validate the field
       var error = hasError(event.target);
@@ -220,10 +229,10 @@ function validateForm() {
   );
 
   // Check all fields on submit
-  document.addEventListener(
+  form.addEventListener(
     'submit',
     function (event) {
-      // Only run on forms flagged for validation
+      // Only run if the field is in a form to be validated
       if (!event.target.classList.contains('validate')) return;
 
       // Get all of the form elements

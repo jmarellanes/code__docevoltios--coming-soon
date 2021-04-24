@@ -5,7 +5,7 @@ import { removeFocusAfterClick } from './partials/utils';
 // Wait until DOM is ready
 document.addEventListener('DOMContentLoaded', function (event) {
   // Wait until images, links, fonts, stylesheets, and js is loaded
-  removeFocusAfterClick();
+  // removeFocusAfterClick();
   openForm();
   validateForm();
 

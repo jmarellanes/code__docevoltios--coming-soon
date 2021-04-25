@@ -53,7 +53,7 @@
   overflow: hidden;
   opacity: 0;
   z-index: 0;
-  transition: opacity 300ms var(--easing--s);
+  // transition: opacity 150ms var(--easing--s);
 
   &--active {
     opacity: 1;

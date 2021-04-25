@@ -11,9 +11,7 @@ function openForm() {
   const openForm = select('.button__primary'),
     contactSection = select('article.contact'),
     formContainer = select('.contact-container'),
-    headerSection = select('.header'),
-    mainSection = select('.main'),
-    worksSection = select('.works'),
+    blurSections = selectAll('.header, .main, .works'),
     formGroups = selectAll('.contact__title, .form__group'),
     submitButton = select('.form__button');
 
@@ -69,67 +67,54 @@ function openForm() {
   }
 
   const openContact = () => {
-    const tlOpen = gsap.timeline();
+    const tlOpen = gsap.timeline({ onComplete: addCloseListener });
+
+    function addCloseListener() {
+      document.addEventListener('keydown', closeContact);
+    }
 
     tlOpen
+      .add('slideIn', 0)
+      .set(formGroups, { opacity: 0, y: 180 })
       .call(() => {
         contactSection.hidden = false;
       })
-      .set(formGroups, { autoAlpha: 0, y: 250 })
-      .call(() => {
-        headerSection.classList.add('header--blurred');
-        mainSection.classList.add('main--blurred');
-        worksSection.classList.add('works--blurred');
-        contactSection.classList.add('contact--active');
-        formContainer.classList.add('contact-container--active');
-      }, null)
+      .to(blurSections, { filter: 'blur(24px)' }, 'slideIn')
+      .to(contactSection, { opacity: 1, zIndex: 4 }, 'slideIn')
+      .to(formContainer, { x: 0 }, 'slideIn')
       .to(formGroups, {
-        duration: 1,
-        autoAlpha: 1,
+        duration: 0.6,
+        opacity: 1,
         y: 0,
-        ease: 'power2.out',
+        ease: 'power1.out',
       })
       .call(focusTrapEnable, null)
       .set(formGroups, { clearProps: 'all' }, 2);
-
-    document.addEventListener('keydown', closeContact);
   };
 
   function closeContact(e) {
     let keyCode = e.keyCode === 27;
     if (!keyCode) return;
 
-    const tlClose = gsap.timeline();
+    const tlClose = gsap.timeline({ onComplete: actionsOnComplete });
 
-    function slideOutAndBlur() {
-      formContainer.classList.remove('contact-container--active');
-      headerSection.classList.remove('header--blurred');
-      mainSection.classList.remove('main--blurred');
-      worksSection.classList.remove('works--blurred');
-      setTimeout(() => {
-        contactSection.classList.remove('contact--active');
-      }, 600);
+    function actionsOnComplete() {
+      contactSection.hidden = true;
+      gsap.set(formGroups, { clearProps: 'all' });
     }
 
     tlClose
+      .add('slideOut', 0)
       .to(formGroups, {
-        duration: 0.6,
-        autoAlpha: 0,
-        y: 250,
-        ease: 'power2.in',
+        duration: 0.4,
+        opacity: 0,
+        y: 150,
+        ease: 'power1.in',
       })
-      .call(slideOutAndBlur, null, '-=.2')
-      .call(focusTrapDisable, null, '<.8')
-      .set(contactSection, {
-        onComplete: () => {
-          contactSection.hidden = true;
-        },
-      })
-      .set(formGroups, {
-        onComplete: () => {
-          clearProps: 'all';
-        },
-      });
+      .to(formContainer, { clearProps: 'all' }, 'slideOut-=.1')
+      .to(blurSections, { clearProps: 'all' }, 'slideOut')
+      .to(contactSection, { clearProps: 'all' })
+      .call(focusTrapDisable, null);
 
     document.removeEventListener('keydown', closeContact);
   }

@@ -11,9 +11,14 @@ function openForm() {
   const openForm = select('.button__primary'),
     contactSection = select('article.contact'),
     formContainer = select('.contact-container'),
+    formElement = select('.contact-container .form'),
     blurSections = selectAll('.header, .main, .works'),
     formGroups = selectAll('.contact__title, .form__group'),
-    submitButton = select('.form__button');
+    submitButton = select('.form__button'),
+    closeButtonContainer = select('.close-form'),
+    lines = selectAll('.lines'),
+    topLine = select('.top-line'),
+    bottomLine = select('.bottom-line');
 
   let disableHandle, tabHandle, hiddenHandle, focusedElementBeforeDialogOpened;
 
@@ -49,7 +54,7 @@ function openForm() {
     // not contain any keyboard focusabe elements, focus will
     // be given to the dialog itself.
     var element = ally.query.firstTabbable({
-      context: contactSection,
+      context: formElement,
       defaultToContext: true,
     });
     element.focus();
@@ -66,16 +71,34 @@ function openForm() {
     focusedElementBeforeDialogOpened.focus();
   }
 
-  const openContact = () => {
+  function animationOnClick() {
+    tlButtonOpen.reversed() ? tlButtonOpen.play() : tlButtonOpen.reverse();
+  }
+
+  const tlButtonOpen = new gsap.timeline({
+    defaults: { duration: 0.25, ease: 'power2.inOut' },
+    paused: true,
+    reversed: true,
+  });
+
+  tlButtonOpen
+    .to(lines, { scaleX: 1, transformOrigin: '50% 50%' })
+    .to(topLine, { rotation: 45 }, 'rotation')
+    .to(bottomLine, { rotation: -45 }, 'rotation');
+
+  function openContact() {
     const tlOpen = gsap.timeline({ onComplete: addCloseListener });
 
     function addCloseListener() {
       document.addEventListener('keydown', closeContact);
+      closeButtonContainer.addEventListener('click', closeContact);
     }
 
     tlOpen
       .add('slideIn', 0)
       .set(formGroups, { opacity: 0, y: 180 })
+      .set(closeButtonContainer, { opacity: 0, y: 50 })
+      .set(lines, { scaleX: 0.125, x: 14 })
       .call(() => {
         contactSection.hidden = false;
       })
@@ -88,13 +111,28 @@ function openForm() {
         y: 0,
         ease: 'power1.out',
       })
+      .to(
+        closeButtonContainer,
+        {
+          duration: 0.3,
+          opacity: 1,
+          y: 0,
+          ease: 'power1.out',
+        },
+        '-=.2'
+      )
+      .call(() => {
+        animationOnClick();
+      })
       .call(focusTrapEnable, null)
       .set(formGroups, { clearProps: 'all' }, 2);
-  };
+  }
 
   function closeContact(e) {
-    let keyCode = e.keyCode === 27;
-    if (!keyCode) return;
+    if (e.type === 'keydown') {
+      let keyCode = e.keyCode === 27;
+      if (!keyCode) return;
+    }
 
     const tlClose = gsap.timeline({ onComplete: actionsOnComplete });
 
@@ -104,13 +142,30 @@ function openForm() {
     }
 
     tlClose
-      .add('slideOut', 0)
-      .to(formGroups, {
-        duration: 0.4,
-        opacity: 0,
-        y: 150,
-        ease: 'power1.in',
+      .call(() => {
+        animationOnClick();
       })
+      .to(
+        closeButtonContainer,
+        {
+          duration: 0.3,
+          opacity: 0,
+          y: 50,
+          ease: 'power1.in',
+        },
+        '+=.5'
+      )
+      .to(
+        formGroups,
+        {
+          duration: 0.4,
+          opacity: 0,
+          y: 150,
+          ease: 'power1.in',
+        },
+        '-=.2'
+      )
+      .add('slideOut', 0.6)
       .to(formContainer, { clearProps: 'all' }, 'slideOut-=.1')
       .to(blurSections, { clearProps: 'all' }, 'slideOut')
       .to(contactSection, { clearProps: 'all' })

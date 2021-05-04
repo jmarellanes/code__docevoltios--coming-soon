@@ -26,7 +26,7 @@
 
           <div class="nav-social">
             <a href="#" class="nav-social__icon-box">
-              <svg src="twitter.svg"></svg>
+              <svg src="icon__twitter.svg"></svg>
             </a>
             <!-- a > nav-social__icon-box -->
           </div>
@@ -60,14 +60,25 @@
             <dd class="actions__item actions__item--play">
               Play a fun game that I coded
               <!-- TODO: Accessibility for button -->
-              <button class="button button__secondary">
+              <button
+                class="button button__secondary"
+                aria-labelledby="button-label__play-game"
+              >
                 <svg
                   src="line__play.svg"
                   class="button__svg-line button__svg-line--secondary"
                 ></svg>
-                <svg src="gamepad.svg" class="button__secondary--icon"></svg>
-                <svg src="sword.svg" class="button__secondary--icon"></svg>
-                <span class="visually-hidden">Click to play a game!</span>
+                <svg
+                  src="icon__gamepad.svg"
+                  class="button__secondary--icon"
+                ></svg>
+                <svg
+                  src="icon__sword.svg"
+                  class="button__secondary--icon"
+                ></svg>
+                <span id="button-label__play-game" hidden
+                  >Click to play a game!</span
+                >
               </button>
               , or
             </dd>
@@ -105,6 +116,11 @@
 
       <article class="contact" tabindex="-1" hidden>
         <div class="contact-container">
+          <button class="close-form" aria-labelledby="button-label">
+            <span id="button-label" hidden>Close Contact Form</span>
+            <svg src="icon__close.svg" class="close-form__icon"></svg>
+          </button>
+
           <h2 class="contact__title">Have a Project?</h2>
 
           <form class="form validate">

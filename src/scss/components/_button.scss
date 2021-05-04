@@ -2,16 +2,16 @@
   -> BUTTON
 ===================================================================== */
 // Fix for detecting 'click' events on SVG in <button>.
-button > * {
-  pointer-events: none;
-}
+// button > * {
+//   pointer-events: none;
+// }
 
 ///////////////////////////////////////////////////////////////////////
 //  ANIMATIONS
-@include animation-path(line-in-available, 330, 0);
-@include animation-path(line-out-available, 0, 330);
-@include animation-path(line-in-play, 230, 0);
-@include animation-path(line-out-play, 0, 230);
+@include animation-path(line-in-available, 316, 0);
+@include animation-path(line-out-available, 0, 316);
+@include animation-path(line-in-play, 96, 0);
+@include animation-path(line-out-play, 0, 96);
 
 ///////////////////////////////////////////////////////////////////////
 //  BUTTON
@@ -63,9 +63,10 @@ button > * {
       bottom: $line-pos-bottom;
 
       path {
-        stroke-dasharray: 330;
-        stroke-dashoffset: 330;
-        animation: line-out-available 450ms var(--easing--xl) forwards;
+        stroke-dasharray: 316;
+        stroke-dashoffset: 316;
+        // transition: stroke-dashoffset;
+        animation: line-out-available 350ms var(--easing--xl) forwards;
       } // -> .button__svg-line--path
     }
 
@@ -73,9 +74,9 @@ button > * {
       bottom: calc(#{$line-pos-bottom} - 4px);
 
       path {
-        stroke-dasharray: 230;
-        stroke-dashoffset: 230;
-        animation: line-out-play 350ms var(--easing--s) forwards;
+        stroke-dasharray: 96;
+        stroke-dashoffset: 96;
+        animation: line-out-play 250ms var(--easing--s) forwards;
       } // -> .button__svg-line--path
     }
   } // -> .button__svg-line
@@ -91,13 +92,13 @@ button > * {
       &__svg-line {
         &--primary {
           path {
-            animation: line-in-available 450ms var(--easing--xl) forwards;
+            animation: line-in-available 350ms var(--easing--xl) forwards;
           }
         }
 
         &--secondary {
           path {
-            animation: line-in-play 350ms var(--easing--s) forwards;
+            animation: line-in-play 250ms var(--easing--s) forwards;
           }
         }
       } // -> button:hover .button__svg-line

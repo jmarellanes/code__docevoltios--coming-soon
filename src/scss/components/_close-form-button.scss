@@ -1,0 +1,25 @@
+.close-form {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  margin-left: auto;
+
+  &__icon {
+    line {
+      stroke: var(--color-secondary--lighter);
+      transition: stroke 200ms var(--easing--s);
+    }
+  }
+
+  &:hover {
+    line {
+      stroke: var(--color-primary--dark);
+    }
+  }
+
+  &:focus {
+    line {
+      stroke: var(--color-primary--dark);
+    }
+  }
+}

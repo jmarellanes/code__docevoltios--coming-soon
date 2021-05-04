@@ -38,15 +38,20 @@ body {
 }
 
 /* =====================================================================
-  -> ACCESSIBLE HIDING
+  -> HIDE CONTENT
 ===================================================================== */
-.visually-hidden {
-  padding: 0 !important;
-  width: 1px;
-  height: 1px;
-  position: absolute !important;
+/*
+ * Utility class to hide content visually while keeping it screen reader-accessible.
+ * Source: https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html
+ */
+.visually-hidden:not(:focus):not(:active) {
+  border: 0;
   clip: rect(1px, 1px, 1px, 1px);
   clip-path: inset(0px 0px 99.9% 99.9%);
+  height: 1px;
   overflow: hidden;
-  border: 0;
+  padding: 0 !important;
+  position: absolute !important;
+  white-space: nowrap;
+  width: 1px;
 } // -> .visually-hidden

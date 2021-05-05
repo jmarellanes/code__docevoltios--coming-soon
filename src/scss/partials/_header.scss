@@ -25,4 +25,22 @@
 
 .nav-social {
   margin-left: auto;
+
+  path {
+    // fill: var(--color-primary);
+    transition: fill 250ms;
+  }
+
+  &__icon-box {
+    &:focus {
+      outline: 2px solid transparent;
+    }
+
+    &:hover,
+    &:focus {
+      path {
+        fill: var(--color-secondary--light);
+      }
+    }
+  }
 } // -> .nav-social

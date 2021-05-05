@@ -1,6 +1,7 @@
 // TODO: Move font rules to _typography.scss
 // TODO: Move layout rules to _layout.scss
-// Form reset -- Making all elements looks the same on different brosers.
+
+// FORM RESET -- Making all elements looks the same on different brosers.
 .form {
   &__field {
     background-color: var(--color-primary);
@@ -44,6 +45,7 @@
   } // -> .form__button
 } // -> .form -> Reset End
 
+// FORM STYLES
 .contact {
   // Workaround to use rgba with CSS Custom Properties
   --primary-dark: 17, 6, 107; // RGB value for --color-primary--dark

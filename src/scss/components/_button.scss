@@ -82,7 +82,6 @@
       path {
         stroke-dasharray: 316;
         stroke-dashoffset: 316;
-        // transition: stroke-dashoffset;
         animation: line-out-available 350ms var(--easing--xl) forwards;
       } // -> .button__svg-line--path
     }

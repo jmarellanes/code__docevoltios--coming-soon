@@ -11,11 +11,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
   // closeFormButton();
   validateForm();
 
-  const paths = document.querySelectorAll('.button__svg-line path');
-  paths.forEach((path, i) => {
-    console.log(`Button ${i} is ${path.getTotalLength()}`);
-  });
-
   window.onload = function () {
     // Waits until next available screen repaint to run code
     window.requestAnimationFrame(function () {});

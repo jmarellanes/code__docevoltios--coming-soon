@@ -18,14 +18,20 @@
     <div class="wrapper">
       <header class="header">
         <div class="header__container .nav-menu">
-          <a href="#0" class="nav-menu__brand">
+          <div class="nav-menu__brand">
             <svg src="brandmark.svg" class="nav-menu__brand-mark"></svg>
             <span class="nav-menu__brand-text">DoceVoltios</span>
-          </a>
+          </div>
           <!-- a > .nav-menu__brand -->
 
           <div class="nav-social">
-            <a href="#" class="nav-social__icon-box">
+            <a
+              href="https://twitter.com/jmarellanes"
+              class="nav-social__icon-box"
+              aria-label="Twitter"
+              target="_blank"
+              rel="noopener"
+            >
               <svg src="icon__twitter.svg"></svg>
             </a>
             <!-- a > nav-social__icon-box -->
@@ -47,7 +53,7 @@
             <dd class="actions__item actions__item--email">
               Send me an email
               <button class="button button__primary">
-                <span>I'm available for work,</span>
+                <span>I'm available for work</span>
                 <svg
                   src="line__available.svg"
                   class="button__svg-line button__svg-line--primary"
@@ -57,6 +63,27 @@
               <!-- button > .button__primary -->
             </dd>
             <!-- dd > actions__item-email -->
+            <dd class="actions__item actions__item--read">
+              Read one of the nicest comments I've received about my work:
+
+              <figure class="testimonial">
+                <blockquote class="testimonial__quote">
+                  "This time Jose did his best work yet - I've never encountered
+                  anyone with such skill and imagination both in the design and
+                  coding side. So glad he's there making our sites look
+                  incredible!"
+                </blockquote>
+                <!-- blockquote > .testimonial__quote -->
+                <!-- prettier-ignore -->
+                <figcaption>
+                  <span class="testimonial__client">Rob Kay,</span>
+                  <cite class="testimonial__url">Freedom Online Services</cite>
+                </figcaption>
+                <!-- figcaption > .testimonial__client -->
+              </figure>
+              <!-- figure > .testimonial -->
+            </dd>
+            <!-- dd > .actions__item-read -->
             <dd class="actions__item actions__item--play">
               Play a fun game that I coded
               <!-- TODO: Accessibility for button -->
@@ -80,30 +107,8 @@
                   >Click to play a game!</span
                 >
               </button>
-              , or
             </dd>
             <!-- dd > .actions__item-play -->
-            <dd class="actions__item actions__item--read">
-              Read one of the nicest comments I've received about my work:
-
-              <figure class="testimonial">
-                <blockquote class="testimonial__quote">
-                  "This time Jose did his best work yet - I've never encountered
-                  anyone with such skill and imagination both in the design and
-                  coding side. So glad he's there making our sites look
-                  incredible!"
-                </blockquote>
-                <!-- blockquote > .testimonial__quote -->
-                <!-- prettier-ignore -->
-                <figcaption>
-                  <span class="testimonial__client">Rob Kay,</span>
-                  <cite class="testimonial__url">Freedom Online Services</cite>
-                </figcaption>
-                <!-- figcaption > .testimonial__client -->
-              </figure>
-              <!-- figure > .testimonial -->
-            </dd>
-            <!-- dd > .actions__item-read -->
           </dl>
           <!-- dl > .actions__container -->
         </article>

@@ -55,3 +55,18 @@
   --easing--xl: cubic-bezier(0.8, 0, 0.2, 1);
   --easing--s: cubic-bezier(0.5, 0.7, 0.4, 1);
 } // -> :root
+
+/* =====================================================================
+  -> RESPONSIVE BREAKPOINTS
+===================================================================== */
+/* prettier-ignore */
+$breakpoints: (
+  'large--l':  ( min-width: 100em ), // ------> 1600px
+  'large--m':  ( min-width: 87.5em ), // -----> 1400px
+  'medium--l': ( max-width:  84.375em ),// ---> 1350px
+  'medium--m': ( max-width:  70em ), // ------> 1120px
+  'small--l':  ( max-width:  61em ), // ------> 976px
+  'small--m':  ( max-width:  38em ), // ------> 608px
+  'small--s':  ( max-width:  29em ), // ------> 464px
+  'small--xs':  ( max-width:  24em ) // ------> 384px
+) !default;

@@ -11,6 +11,10 @@
   &__title {
     margin-top: 1.5rem;
     margin-bottom: 2rem;
+
+    @include respond-to('medium--l') {
+      color: blue;
+    }
   }
 
   &__list-title {

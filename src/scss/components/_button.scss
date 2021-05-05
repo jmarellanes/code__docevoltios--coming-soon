@@ -12,6 +12,8 @@
 @include animation-path(line-out-available, 0, 316);
 @include animation-path(line-in-play, 96, 0);
 @include animation-path(line-out-play, 0, 96);
+@include animation-path(line-in-send-form, 91, 0);
+@include animation-path(line-out-send-form, 0, 91);
 
 ///////////////////////////////////////////////////////////////////////
 //  BUTTON
@@ -51,6 +53,21 @@
     }
   }
 
+  &__form {
+    color: var(--color-primary--dark);
+    transition: color 250ms var(--easing--s);
+
+    &::before {
+      left: -1rem;
+      background-color: var(--color-secondary--lighter);
+    }
+
+    &:hover,
+    &:focus {
+      color: var(--color-secondary--lighter);
+    }
+  }
+
   &__svg-line {
     position: absolute;
     left: $line-pos-left;
@@ -79,6 +96,19 @@
         animation: line-out-play 250ms var(--easing--s) forwards;
       } // -> .button__svg-line--path
     }
+
+    &--form {
+      bottom: $line-pos-bottom;
+      left: -1rem;
+
+      path {
+        stroke-dasharray: 91;
+        stroke-dashoffset: 91;
+        animation: line-out-send-form 250ms var(--easing--s) forwards;
+
+        stroke: var(--color-secondary--lighter);
+      } // -> .button__svg-line--path
+    }
   } // -> .button__svg-line
 
   &:focus {
@@ -99,6 +129,12 @@
         &--secondary {
           path {
             animation: line-in-play 250ms var(--easing--s) forwards;
+          }
+        }
+
+        &--form {
+          path {
+            animation: line-in-send-form 250ms var(--easing--s) forwards;
           }
         }
       } // -> button:hover .button__svg-line

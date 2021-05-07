@@ -16,6 +16,14 @@ html {
   box-sizing: border-box;
   font-size: 100%; // 1rem = 16px
   font-weight: normal;
+
+  @include respond-to('large--l') {
+    font-size: 110%;
+  }
+
+  @include respond-to('small--m') {
+    font-size: 90%;
+  }
 } //--> html
 
 /* =====================================================================

@@ -27,6 +27,7 @@
   --spacer-32: 2rem;
   --spacer-40: 2.5rem;
   --spacer-48: 3rem;
+  --spacer-56: 3.5rem;
   --spacer-64: 4rem;
   --spacer-72: 4.5rem;
   --spacer-80: 5rem;
@@ -61,12 +62,12 @@
 ===================================================================== */
 /* prettier-ignore */
 $breakpoints: (
-  'large--l':  ( min-width: 100em ), // ------> 1600px
-  'large--m':  ( min-width: 87.5em ), // -----> 1400px
-  'medium--l': ( max-width:  84.375em ),// ---> 1350px
-  'medium--m': ( max-width:  70em ), // ------> 1120px
-  'small--l':  ( max-width:  61em ), // ------> 976px
-  'small--m':  ( max-width:  38em ), // ------> 608px
-  'small--s':  ( max-width:  29em ), // ------> 464px
-  'small--xs':  ( max-width:  24em ) // ------> 384px
+  'large--l':  ( min-width: 100em ),    // ------> 1600px
+  'large--m':  ( min-width: 88.125em ), // ------> 1410px
+  'medium--l': ( max-width:  80em ),    // ------> 1280px
+  'medium--m': ( max-width:  68em ),    // ------> 1088px
+  'small--l':  ( max-width:  56em ),    // ------> 896px
+  'small--m':  ( max-width:  50em ),    // ------> 800px
+  'small--s':  ( max-width:  38em ),    // ------> 608px
+  'small--xs':  ( max-width:  31.25em ), // ------> 500px
 ) !default;

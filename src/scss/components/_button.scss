@@ -72,12 +72,20 @@
     position: absolute;
     left: $line-pos-left;
 
+    @include respond-to('small--m') {
+      width: 100%;
+    }
+
     path {
       stroke: var(--color-secondary--light);
     }
 
     &--primary {
       bottom: $line-pos-bottom;
+
+      @include respond-to('large--l') {
+        left: 28px;
+      }
 
       path {
         stroke-dasharray: 316;
@@ -99,6 +107,10 @@
     &--form {
       bottom: $line-pos-bottom;
       left: -1rem;
+
+      @include respond-to('large--l') {
+        left: -6px;
+      }
 
       path {
         stroke-dasharray: 91;

@@ -3,6 +3,11 @@
 ===================================================================== */
 .main {
   margin-right: var(--spacer-32);
+
+  @include respond-to('small--l') {
+    margin-right: 0;
+    margin-bottom: var(--spacer-56);
+  }
 } // -> .main
 
 ///////////////////////////////////////////////////////////////////////
@@ -11,10 +16,10 @@
   &__title {
     margin-top: 1.5rem;
     margin-bottom: 2rem;
+  }
 
-    @include respond-to('medium--l') {
-      color: blue;
-    }
+  &__container {
+    max-width: 60ch;
   }
 
   &__list-title {
@@ -31,6 +36,10 @@
 
     &--email {
       background-position-y: 7px;
+
+      @include respond-to('small--l') {
+        background-position-y: 6px;
+      }
     }
   } // -> .actions__item
 } // -> .actions

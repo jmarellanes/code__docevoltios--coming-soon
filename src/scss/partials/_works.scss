@@ -14,13 +14,26 @@
 .works {
   height: 100vh;
 
+  @include respond-to('small--l') {
+    height: 60vh;
+    width: 100vw;
+  }
+
   // TODO: Edit portfolio.png image and add the rest of the portfolio items.
   &__container {
     height: 100%;
-    background-image: url('../images/portfolio.png');
-    background-repeat: repeat-y;
-    background-position: left bottom;
-    animation: infinite-scoll-Y 120s linear infinite;
-    animation-play-state: paused;
-  } // -> .works__container
+    width: 100%;
+
+    span {
+      height: inherit;
+      width: inherit;
+      display: block;
+      background-image: url('../images/portfolio.png');
+      background-repeat: repeat-y;
+      background-position: left bottom;
+      background-size: 100%;
+      animation: infinite-scoll-Y 20s linear infinite;
+      animation-play-state: paused;
+    } // -> .works__container
+  }
 } // -> .works

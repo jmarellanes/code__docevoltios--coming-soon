@@ -4,6 +4,10 @@
 .header {
   &__container {
     margin-right: var(--spacer-32);
+
+    @include respond-to('small--l') {
+      margin-right: 0;
+    }
   }
 }
 ///////////////////////////////////////////////////////////////////////

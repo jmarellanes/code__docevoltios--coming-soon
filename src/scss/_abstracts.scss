@@ -17,6 +17,17 @@
   }
 }
 
+@mixin dc_grid($margin-left, $column-width, $margin-right) {
+  grid-template-columns:
+    [full-start]
+    $margin-left
+    [grid-start]
+    repeat(12, minmax(min-content, $column-width))
+    [grid-end]
+    $margin-right
+    [full-end];
+}
+
 ///////////////////////////////////////////////////////////////////////
 // MEDIA QUERY MANAGER
 /// @param {String} $breakpoint - Breakpoint name

@@ -72,6 +72,18 @@
     transform: translateX(44rem);
     transition: transform 600ms var(--easing--s);
 
+    @include respond-to('large--l') {
+      padding: 3rem 4.5rem 0;
+    }
+
+    @include respond-to('small--l') {
+      padding: 2.5rem 3.5rem 0;
+    }
+
+    @include respond-to('small--xs') {
+      padding: 1.8rem 2rem 0;
+    }
+
     &--active {
       transform: translateX(0);
     }
@@ -79,12 +91,20 @@
 
   &__title {
     margin-bottom: 4rem;
+
+    @include respond-to('large--l') {
+      margin-bottom: 3rem;
+    }
   } // -> contact__title
 } // -> contact
 
 .form {
   &__group {
     display: flex;
+
+    @include respond-to('small--xs') {
+      display: block;
+    }
 
     position: relative;
     z-index: 1;

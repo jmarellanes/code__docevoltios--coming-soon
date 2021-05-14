@@ -20,9 +20,9 @@ const autoReload = browserSync.create();
 
 export const serve = (done) => {
   autoReload.init({
-    server: {
-      baseDir: 'dist/',
-    },
+    proxy: 'http://localhost',
+    host: 'docevoltios.local',
+    open: 'external',
   });
   done();
 };

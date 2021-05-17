@@ -1,3 +1,10 @@
 .is-loading {
-  background-color: #ffffff;
+  background-color: var(--color-primary--dark);
+}
+
+.is-loading .header,
+.is-loading .main,
+.is-loading .works,
+.is-loading .contact {
+  display: none;
 }

@@ -6,6 +6,9 @@
   grid-template-rows: 5rem min-content;
   @include dc_grid(minmax(2rem, 1fr), 7rem, minmax(2rem, 1fr));
 
+  position: relative;
+  z-index: 1;
+
   max-width: 88rem; // 1408px
   margin: 0 auto;
 

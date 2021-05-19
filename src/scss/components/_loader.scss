@@ -26,7 +26,6 @@
   &__logotype-mask {
     position: absolute;
     overflow: hidden;
-    visibility: hidden;
   }
 
   &__brandmark,
@@ -44,5 +43,6 @@
     font-family: var(--font-secondary--italic);
     font-size: dc_calculate-rem(48);
     color: var(--color-primary);
+    visibility: hidden;
   }
 }

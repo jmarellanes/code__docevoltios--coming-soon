@@ -1,4 +1,8 @@
 Task list:
-1. Portfolio Images
-2. Intro Animation
-3. Fix Spaces on Portfolio Designs: Other than FOS and PAC
+done > -- Portfolio Images
+done > -- Color blend mode on Portfolio Image
+-- Intro Animation
+-- Remove Scroll in loading animation
+-- Ajax request when sending contact form
+-- Change Portfolio Image height on window resize
+-- Fix Spaces on Portfolio Designs: Other than FOS and PAC

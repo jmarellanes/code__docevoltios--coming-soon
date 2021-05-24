@@ -32,6 +32,8 @@
       background-repeat: repeat-y;
       background-position: left bottom;
       background-size: 100%;
+      background-color: var(--color-secondary);
+      background-blend-mode: luminosity;
       animation: infinite-scoll-Y 80s linear infinite;
       animation-play-state: paused;
     } // -> .works__container

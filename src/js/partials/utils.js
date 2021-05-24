@@ -22,7 +22,7 @@ function removeFocusAfterClick() {
 }
 
 /* =====================================================================
-  -> CALCULATE works__container span height FOR CORRECT ANIMATION
+  -> CALCULATE works__container span height FOR INFINITE ANIMATION
 ===================================================================== */
 function calculateWorksHeight() {
   const portfolioImage = document.querySelector('.works__container img'),

@@ -6,7 +6,7 @@
 // prettier-ignore
 @keyframes infinite-scoll-Y {
   from { background-position: left 0; }
-  to { background-position: left -1385px; }
+  to { background-position: left var(--works-image-height); }
 }
 
 ///////////////////////////////////////////////////////////////////////
@@ -28,11 +28,11 @@
       height: inherit;
       width: inherit;
       display: block;
-      background-image: url('../images/portfolio.png');
+      background-image: url('../images/portfolio.webp');
       background-repeat: repeat-y;
       background-position: left bottom;
       background-size: 100%;
-      animation: infinite-scoll-Y 20s linear infinite;
+      animation: infinite-scoll-Y 80s linear infinite;
       animation-play-state: paused;
     } // -> .works__container
   }

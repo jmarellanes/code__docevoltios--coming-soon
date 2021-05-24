@@ -53,7 +53,7 @@ export const inlineSVG = () => {
 };
 
 export const images = () => {
-  return src('src/images/**/*.{jpg,jpeg,png,svg,gif}')
+  return src('src/images/**/*.{jpg,jpeg,png,svg,gif,webp}')
     .pipe(gulpif(PRODUCTION, imagemin()))
     .pipe(dest('dist/images'));
 };
@@ -97,7 +97,7 @@ export const scripts = () => {
 export const watchForChanges = () => {
   watch('src/**/*.html', series(inlineSVG, reload));
   watch('src/scss/**/*.scss', series(styles));
-  watch('src/images/**/*.{jpg,jpeg,png,svg,gif}', series(images, reload));
+  watch('src/images/**/*.{jpg,jpeg,png,svg,gif,webp}', series(images, reload));
   watch(
     [
       'src/**/*',

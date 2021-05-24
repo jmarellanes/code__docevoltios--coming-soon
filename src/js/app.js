@@ -1,5 +1,6 @@
 import { openForm } from './components/open-form';
 import { validateForm } from './components/form-validation';
+import { calculateWorksHeight } from './partials/utils';
 
 const select = (e) => document.querySelector(e);
 const selectAll = (e) => document.querySelectorAll(e);
@@ -120,19 +121,9 @@ function initFunctions() {
   select('body').classList.remove('is-loading');
   openForm();
   validateForm();
+  setTimeout(() => {
+    calculateWorksHeight();
+  }, 1200);
 }
 
 // no window.addEventListener('load') because we are using imagesLoaded for preloading
-// window.addEventListener('load', function () {
-//   init();
-// });
-
-// // Wait until DOM is ready
-// document.addEventListener('DOMContentLoaded', function (event) {
-//   // Wait until images, links, fonts, stylesheets, and js is loaded
-//
-//   window.onload = function () {
-//     // Waits until next available screen repaint to run code
-//     window.requestAnimationFrame(function () {});
-//   };
-// });

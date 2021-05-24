@@ -21,4 +21,24 @@ function removeFocusAfterClick() {
   });
 }
 
-export { removeFocusAfterClick };
+/* =====================================================================
+  -> CALCULATE works__container span height FOR CORRECT ANIMATION
+===================================================================== */
+function calculateWorksHeight() {
+  const portfolioImage = document.querySelector('.works__container img'),
+    animationState = document.querySelector('.works__container span');
+
+  let worksContainerWidth = document.querySelector('.works__container'),
+    root = document.documentElement,
+    updateWidth =
+      (worksContainerWidth.offsetWidth / portfolioImage.width) *
+      portfolioImage.height;
+
+  root.style.setProperty(
+    '--works-image-height',
+    '-' + Math.round(updateWidth) + 'px'
+  );
+  animationState.style.animationPlayState = 'running';
+}
+
+export { removeFocusAfterClick, calculateWorksHeight };

@@ -1,0 +1,4 @@
+Task list:
+1. Portfolio Images
+2. Intro Animation
+3. Fix Spaces on Portfolio Designs: Other than FOS and PAC

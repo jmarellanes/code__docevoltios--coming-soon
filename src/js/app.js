@@ -1,6 +1,7 @@
 import { openForm } from './components/open-form';
 import { validateForm } from './components/form-validation';
 import { calculateWorksHeight } from './partials/utils';
+import { homeAnimation } from './partials/home-animation';
 
 const select = (e) => document.querySelector(e);
 const selectAll = (e) => document.querySelectorAll(e);
@@ -124,6 +125,9 @@ function initFunctions() {
   setTimeout(() => {
     calculateWorksHeight();
   }, 1200);
+  setTimeout(() => {
+    homeAnimation();
+  }, 1400);
 }
 
 // no window.addEventListener('load') because we are using imagesLoaded for preloading

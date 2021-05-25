@@ -21,10 +21,18 @@
 
   // TODO: Edit portfolio.png image and add the rest of the portfolio items.
   &__container {
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+
     height: 100%;
     width: 100%;
+    background-color: var(--color-secondary);
 
     span {
+      opacity: 0;
+      visibility: hidden;
+
       height: inherit;
       width: inherit;
       display: block;
@@ -39,3 +47,11 @@
     } // -> .works__container
   }
 } // -> .works
+
+/* Optimizing Performance: When not position absolute or fixed */
+.works__container,
+.works__container span {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}

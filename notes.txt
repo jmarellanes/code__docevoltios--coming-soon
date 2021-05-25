@@ -2,6 +2,7 @@ Task list:
 done > -- Portfolio Images
 done > -- Color blend mode on Portfolio Image
 -- Intro Animation
+-- Fix SVG icon on loading screen
 -- Remove Scroll in loading animation
 -- Ajax request when sending contact form
 -- Change Portfolio Image height on window resize

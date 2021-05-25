@@ -2,11 +2,11 @@
   background-color: var(--color-secondary);
 }
 
-.is-loading .header,
-.is-loading .main,
-.is-loading .works,
-.is-loading .contact {
-  display: none;
+.header,
+.main,
+.contact {
+  opacity: 0;
+  visibility: hidden;
 }
 
 .loader {

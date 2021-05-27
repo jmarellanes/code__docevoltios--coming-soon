@@ -1,6 +1,5 @@
 import { openForm } from './components/open-form';
 import { validateForm } from './components/form-validation';
-import { calculateWorksHeight } from './partials/utils';
 import { homeAnimation } from './partials/home-animation';
 
 const select = (e) => document.querySelector(e);
@@ -122,9 +121,6 @@ function initFunctions() {
   select('body').classList.remove('is-loading');
   openForm();
   validateForm();
-  setTimeout(() => {
-    calculateWorksHeight();
-  }, 1200);
   setTimeout(() => {
     homeAnimation();
   }, 700);

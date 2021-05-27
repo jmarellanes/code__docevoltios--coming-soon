@@ -38,7 +38,8 @@ function calculateWorksHeight() {
     '--works-image-height',
     '-' + Math.round(updateWidth) + 'px'
   );
-  // animationState.style.animationPlayState = 'running';
+  console.log(updateWidth);
+  animationState.style.animationPlayState = 'running';
 }
 
 export { removeFocusAfterClick, calculateWorksHeight };

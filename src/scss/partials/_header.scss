@@ -8,7 +8,7 @@
 
     height: min-content;
     width: 100%;
-    overflow: hidden;
+    // overflow: hidden;
     margin-right: var(--spacer-32);
 
     @include respond-to('small--l') {

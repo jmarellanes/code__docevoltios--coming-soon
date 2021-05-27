@@ -70,21 +70,15 @@ body {
 ===================================================================== */
 h1 {
   font-family: var(--font-headings);
-  font-size: dc_calculate-rem(108);
+  // font-size: dc_calculate-rem(108);
+  font-size: 7.7vw;
   line-height: dc_calculate-lh(120, 108);
   color: var(--color-secondary);
   @include dc_text-properties;
 
-  @include respond-to('medium--l') {
-    font-size: dc_calculate-rem(92);
-  }
-
-  @include respond-to('medium--m') {
-    font-size: dc_calculate-rem(86);
-  }
-
   @include respond-to('small--l') {
-    font-size: dc_calculate-rem(72);
+    // font-size: dc_calculate-rem(72);
+    font-size: 11.7vw;
   }
 }
 

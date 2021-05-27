@@ -3,6 +3,12 @@
 ===================================================================== */
 .header {
   &__container {
+    opacity: 0;
+    visibility: hidden;
+
+    height: min-content;
+    width: 100%;
+    overflow: hidden;
     margin-right: var(--spacer-32);
 
     @include respond-to('small--l') {

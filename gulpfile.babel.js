@@ -23,7 +23,7 @@ export const serve = (done) => {
     proxy: 'http://localhost',
     host: 'docevoltios.local',
     open: 'external',
-    https: true,
+    // https: true,
   });
   done();
 };

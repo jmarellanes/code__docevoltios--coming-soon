@@ -127,7 +127,7 @@ function initFunctions() {
   }, 1200);
   setTimeout(() => {
     homeAnimation();
-  }, 1400);
+  }, 700);
 }
 
 // no window.addEventListener('load') because we are using imagesLoaded for preloading

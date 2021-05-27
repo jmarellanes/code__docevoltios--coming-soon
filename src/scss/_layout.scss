@@ -40,6 +40,9 @@
 
   z-index: 3;
 
+  display: flex;
+  align-items: center;
+
   @include respond-to('medium--l') {
     grid-column: grid-start / 9;
   }
@@ -55,8 +58,6 @@
   &__container {
     display: flex;
     align-items: center;
-
-    height: 100%;
   } // -> .header__container
 } // -> .header
 

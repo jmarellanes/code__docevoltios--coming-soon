@@ -8,6 +8,7 @@ function openForm() {
   const selectAll = (e) => document.querySelectorAll(e);
   const log = console.log.bind(console);
 
+  // Script
   const openForm = select('.button__primary'),
     contactSection = select('article.contact'),
     formContainer = select('.contact-container'),

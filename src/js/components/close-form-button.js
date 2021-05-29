@@ -1,15 +1,10 @@
 function closeFormButton() {
-  /* =====================================================================
-  -> SHORTHAND FUNCTIONS
-===================================================================== */
   // Shorthand Function
   const select = (e) => document.querySelector(e);
   const selectAll = (e) => document.querySelectorAll(e);
   const log = console.log.bind(console);
 
-  /* =====================================================================
-  -> SCRIPT
-===================================================================== */
+  // Script
   const closeButton = select('.close-form__icon'),
     lines = selectAll('.lines'),
     topLine = select('.top-line'),

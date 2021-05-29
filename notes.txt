@@ -3,8 +3,8 @@ done > -- Portfolio Images
 done > -- Color blend mode on Portfolio Image
 done > -- Intro Animation
 done > -- Fix Portfolio Image on vertical resolutions
+-- Ajax request when sending contact form
 -- Fix SVG icon on loading screen
 -- Remove Scroll in loading animation
--- Ajax request when sending contact form
 -- Change Portfolio Image height on window resize
 -- Fix Spaces on Portfolio Designs: Other than FOS and PAC

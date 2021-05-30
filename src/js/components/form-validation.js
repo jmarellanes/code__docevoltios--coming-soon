@@ -1,3 +1,5 @@
+import { successSend } from '../partials/form-response-animation';
+
 function validateForm() {
   // TODO: Add "x" icon to error messages.
   // TODO: Fix bug - Con slide-in al escribir en los campos por segunda vez.
@@ -255,12 +257,34 @@ function validateForm() {
       if (hasErrors) {
         event.preventDefault();
         hasErrors.focus();
-      }
+      } else {
+        event.preventDefault();
+        // Otherwise, let the form submit normally
+        // You could also bolt in an Ajax form submit process here
+        let formData = new FormData(form);
 
-      // Otherwise, let the form submit normally
-      // You could also bolt in an Ajax form submit process here
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(formData).toString(),
+        })
+          .then((response) => {
+            if (response.ok) {
+              return successSend(response);
+            } else {
+              return Promise.reject(
+                Object.assign({}, json, {
+                  status: response.status,
+                  statusText: response.statusText,
+                })
+              );
+            }
+          })
+          .catch((error) => console.log('error is', error));
+      }
     },
     false
   );
 }
+
 export { validateForm };

@@ -76,7 +76,7 @@ function openForm() {
     tlButtonOpen.reversed() ? tlButtonOpen.play() : tlButtonOpen.reverse();
   }
 
-  const tlButtonOpen = new gsap.timeline({
+  const tlButtonOpen = gsap.timeline({
     defaults: { duration: 0.25, ease: 'power2.inOut' },
     paused: true,
     reversed: true,

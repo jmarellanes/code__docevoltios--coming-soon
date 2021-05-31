@@ -1,7 +1,7 @@
 // TODO: Move font rules to _typography.scss
 // TODO: Move layout rules to _layout.scss
 
-// FORM RESET -- Making all elements looks the same on different brosers.
+// FORM RESET - BEGIN -- Making all elements looks the same on different brosers.
 .form {
   &__field {
     background-color: var(--color-primary);
@@ -43,7 +43,8 @@
       border: 2px solid currentColor;
     }
   } // -> .form__button
-} // -> .form -> Reset End
+} // -> .form
+// FORM RESET - END
 
 // FORM STYLES
 .contact {

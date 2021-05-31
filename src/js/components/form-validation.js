@@ -263,24 +263,28 @@ function validateForm() {
         // You could also bolt in an Ajax form submit process here
         let formData = new FormData(form);
 
+        function handleErrors(response) {
+          if (!response.ok) {
+            console.log('Not ok');
+            throw Error('Wrpng');
+          }
+          return response;
+        }
+
         fetch('/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: new URLSearchParams(formData).toString(),
         })
-          .then((response) => {
-            if (response.ok) {
-              return successSend(response);
-            } else {
-              return Promise.reject(
-                Object.assign({}, json, {
-                  status: response.status,
-                  statusText: response.statusText,
-                })
-              );
-            }
+          .then(handleErrors)
+          .then(function (response) {
+            return successSend(response);
           })
-          .catch((error) => console.log('error is', error));
+          .catch((error) => {
+            event.preventDefault();
+            console.log('error is', error);
+            return successSend();
+          });
       }
     },
     false

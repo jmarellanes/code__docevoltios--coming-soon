@@ -231,17 +231,10 @@
       margin-bottom: var(--spacer-16);
     }
   }
-
-  &__success {
-    &-container {
-      display: none;
-      visibility: hidden;
-    }
-  }
 } // -> form
 
-.form,
-h2 {
-  display: none;
-  visibility: hidden;
-}
+// .form,
+// h2 {
+//   display: none;
+//   visibility: hidden;
+// }

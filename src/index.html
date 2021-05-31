@@ -172,7 +172,7 @@
               </span>
             </div>
 
-            <div class="form__group form__group--area">
+            <div class="form__group form__group--textarea">
               <label for="contact-help"
                 >I'm contacting you to help me with</label
               >
@@ -202,7 +202,7 @@
               </span>
             </div>
 
-            <div class="form__group form__group--area">
+            <div class="form__group form__group--textarea">
               <label for="additional-notes">Additional notes:</label>
               <span class="form__container-field">
                 <textarea
@@ -224,10 +224,12 @@
               </button>
             </div>
           </form>
+          <!-- .form -->
 
           <div class="form__success-container">
             <img
               src="images/success-message.png"
+              class="form__success-image"
               alt="Image for Success Message"
             />
             <p class="form__success-title">You're the real deal!</p>
@@ -240,6 +242,7 @@
           <div class="form__failure-container">
             <img
               src="images/failure-message.png"
+              class="form__failure-image"
               alt="Image for Failure Message"
             />
             <p class="form__failure-title">Dang it! Something went wrong</p>
@@ -247,13 +250,12 @@
               Oh, come on! It looks like your message is being burned and
               stabbed... and it's crying too. Poor little thing!
             </p>
-            <button class="button button__primary">
-              <span>I'm available for work</span>
+            <button class="button button__try-again">
+              <span>Try Again</span>
               <svg
                 src="line__available.svg"
-                class="button__svg-line button__svg-line--primary"
+                class="button__svg-line button__svg-line--try-again"
               ></svg>
-              <span class="visually-hidden">Click to contact me!</span>
             </button>
           </div>
         </div>

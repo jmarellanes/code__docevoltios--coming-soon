@@ -148,3 +148,31 @@ h2 {
   cursor: pointer;
   @include dc_text-properties;
 }
+
+//////////////////////////////////////////////////////////////////////
+//  CONTACT FORM
+.form__success,
+.form__failure {
+  &-title {
+    font-family: var(--font-secondary);
+    font-size: dc_calculate-rem(34);
+    line-height: dc_calculate-lh(34, 30);
+    color: var(--color-secondary--lighter);
+    @include dc_text-properties;
+  }
+
+  &-text {
+    font-family: var(--font-primary);
+    font-size: dc_calculate-rem(18);
+    line-height: dc_calculate-lh(18, 12);
+    color: var(--color-secondary--lighter);
+    @include dc_text-properties;
+  }
+}
+
+.form__failure {
+  &-title {
+    font-size: dc_calculate-rem(26);
+    line-height: dc_calculate-lh(26, 20);
+  }
+}

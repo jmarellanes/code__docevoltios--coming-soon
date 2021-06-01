@@ -4,10 +4,12 @@ done > -- Color blend mode on Portfolio Image
 done > -- Intro Animation
 done > -- Fix Portfolio Image on vertical resolutions
 done -- Ajax request when sending contact form
--- IMPORTANT > Bug Send Button animation on less than 800px
--- Send Button on Failure send
+done -- IMPORTANT > Bug Send Button animation on less than 800px
 -- h1 - line height
 -- Check Animations Performance
+
+> DESPUES DE LANZAR
+-- Send Button on Failure send
 -- Fix SVG icon on loading screen
 -- Remove Scroll in loading animation
 -- Change Portfolio Image height on window resize

@@ -59,13 +59,13 @@ function homeAnimation() {
     });
 
   tlHome
-    // .addPause(0.0001) - For Debugging Purpose
+    // .addPause(0.0001) // For Debugging Purpose
     .set([headerMask, mainTitle], { autoAlpha: 1 })
     .add('revealChars', 0)
     .staggerFromTo(
       '.actions__lines1 .actions__chars',
       0.2,
-      { y: 140 },
+      { y: 175 },
       { y: 0, ease: 'power1.out' },
       0.1,
       'revealChars'
@@ -73,7 +73,7 @@ function homeAnimation() {
     .staggerFromTo(
       '.actions__lines2 .actions__chars',
       0.2,
-      { y: 140 },
+      { y: 175 },
       { y: 0, ease: 'power1.out' },
       0.1,
       'revealChars+=.2'

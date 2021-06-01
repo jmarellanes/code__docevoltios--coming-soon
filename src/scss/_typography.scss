@@ -72,7 +72,7 @@ h1 {
   font-family: var(--font-headings);
   // font-size: dc_calculate-rem(108);
   font-size: 7.7vw;
-  line-height: dc_calculate-lh(120, 108);
+  line-height: dc_calculate-lh(85, 108);
   color: var(--color-secondary);
   @include dc_text-properties;
 

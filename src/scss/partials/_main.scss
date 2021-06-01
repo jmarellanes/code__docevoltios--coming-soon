@@ -17,12 +17,20 @@
     opacity: 0;
     visibility: hidden;
 
-    margin-top: 1.5rem;
-    margin-bottom: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 0.5rem;
+
+    @include respond-to('small--s') {
+      margin-top: 1.5rem;
+    }
   }
 
   &__mask {
     overflow: hidden;
+  }
+
+  &__chars {
+    vertical-align: text-top;
   }
 
   &__container {

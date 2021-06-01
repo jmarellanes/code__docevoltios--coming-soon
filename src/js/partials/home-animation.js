@@ -59,7 +59,7 @@ function homeAnimation() {
     });
 
   tlHome
-    // .addPause(0.0001)
+    // .addPause(0.0001) - For Debugging Purpose
     .set([headerMask, mainTitle], { autoAlpha: 1 })
     .add('revealChars', 0)
     .staggerFromTo(

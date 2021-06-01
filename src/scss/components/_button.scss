@@ -20,15 +20,24 @@
 // TODO: Refactor HTML and CSS to eliminate .button__svg-line--primay and .button__svg-line--secondary and use .button__primary and .button__secondary
 .button {
   $line-pos-bottom: 10px;
-  $line-pos-left: 5px;
+  $line-pos-left: 0;
 
   position: relative;
   background-color: transparent;
   border: none;
   color: var(--color-secondary);
+  overflow: hidden;
 
   margin: 0 1rem;
-  padding: 0 1rem;
+  padding: 0 1.5rem 0 0.7rem;
+
+  @include respond-to('small--m') {
+    padding-right: 2rem;
+  }
+
+  @include respond-to('small--s') {
+    padding-right: 1.5rem;
+  }
 
   &::before {
     content: '';
@@ -39,6 +48,14 @@
     height: 4px;
     width: 1.5rem;
     background-color: var(--color-secondary--light);
+
+    @include respond-to('small--m') {
+      bottom: 8px;
+    }
+
+    @include respond-to('small--s') {
+      bottom: 9px;
+    }
   } // -> .button::before
 
   &__secondary {
@@ -58,7 +75,8 @@
     transition: color 250ms var(--easing--s);
 
     &::before {
-      left: -1rem;
+      bottom: 12px;
+      width: 1.1rem;
       background-color: var(--color-secondary--lighter);
     }
 
@@ -70,10 +88,10 @@
 
   &__svg-line {
     position: absolute;
-    left: $line-pos-left;
+    left: -8px;
 
     @include respond-to('small--m') {
-      width: 100%;
+      left: -35px;
     }
 
     path {
@@ -84,7 +102,15 @@
       bottom: $line-pos-bottom;
 
       @include respond-to('large--l') {
-        left: 28px;
+        left: 20px;
+      }
+
+      @include respond-to('small--m') {
+        bottom: 8px;
+      }
+
+      @include respond-to('small--s') {
+        bottom: 9px;
       }
 
       path {
@@ -105,11 +131,15 @@
     }
 
     &--form {
-      bottom: $line-pos-bottom;
-      left: -1rem;
+      bottom: 12px;
+      left: 2px;
+
+      @include respond-to('large--m') {
+        left: 5px;
+      }
 
       @include respond-to('large--l') {
-        left: -6px;
+        left: 10px;
       }
 
       path {

@@ -34,13 +34,16 @@
     border: none;
     background-color: transparent;
     font-family: var(--font-secondary);
-    font-size: dc_calculate-rem(20);
+    font-size: dc_calculate-rem(22);
     text-transform: uppercase;
-    padding: 0;
     cursor: pointer;
 
     @media screen and (-ms-high-contrast: active) {
       border: 2px solid currentColor;
+    }
+
+    @include respond-to('small--m') {
+      font-size: dc_calculate-rem(26);
     }
   } // -> .form__button
 } // -> .form

@@ -263,13 +263,12 @@ function validateForm() {
 
         function handleErrors(response) {
           if (!response.ok) {
-            console.log(response);
             throw Error(response.statusText);
           }
           return response;
         }
 
-        fetch('/', {
+        fetch('/test', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: new URLSearchParams(formData).toString(),
@@ -279,7 +278,7 @@ function validateForm() {
             return successSend();
           })
           .catch((error) => {
-            // console.log('error is', error);
+            console.log('error is', error);
             return failureSend();
           });
       }

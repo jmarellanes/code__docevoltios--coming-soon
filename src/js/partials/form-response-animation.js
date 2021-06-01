@@ -23,15 +23,22 @@ function successSend() {
     })
     .call(() => {
       successContainer.hidden = false;
-      contactForm.hidden = true;
       contactTitle.hidden = true;
+      contactForm.hidden = true;
     })
     .from([successChilds[0], successChilds[1]], {
       duration: 0.4,
       autoAlpha: 0,
       y: -60,
     })
-    .from(successChilds[2], { duration: 0.2, autoAlpha: 0, y: -40 }, '-=.2');
+    .from(successChilds[2], { duration: 0.2, autoAlpha: 0, y: -40 }, '-=.2')
+    .call(
+      () => {
+        contactForm.reset();
+      },
+      null,
+      '+=.5'
+    );
 }
 
 function failureSend() {
@@ -52,8 +59,8 @@ function failureSend() {
     })
     .call(() => {
       failureContainer.hidden = false;
-      contactForm.hidden = true;
       contactTitle.hidden = true;
+      contactForm.hidden = true;
     })
     .from([failureChilds[0], failureChilds[1]], {
       duration: 0.4,

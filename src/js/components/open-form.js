@@ -15,11 +15,15 @@ function openForm() {
     formElement = select('.contact-container .form'),
     blurSections = selectAll('.header, .main, .works'),
     formGroups = selectAll('.contact__title, .form__group'),
+    contactTitle = select('.contact__title'),
+    contactForm = select('.form'),
     submitButton = select('.form__button'),
     closeButtonContainer = select('.close-form'),
     lines = selectAll('.lines'),
     topLine = select('.top-line'),
-    bottomLine = select('.bottom-line');
+    bottomLine = select('.bottom-line'),
+    failureContainer = select('.form__failure-container'),
+    successContainer = select('.form__success-container');
 
   let disableHandle, tabHandle, hiddenHandle, focusedElementBeforeDialogOpened;
 
@@ -73,27 +77,29 @@ function openForm() {
   }
 
   function animationOnClick() {
-    tlButtonOpen.reversed() ? tlButtonOpen.play() : tlButtonOpen.reverse();
+    tlButtonAnimation.reversed()
+      ? tlButtonAnimation.play()
+      : tlButtonAnimation.reverse();
   }
 
-  const tlButtonOpen = gsap.timeline({
+  const tlButtonAnimation = gsap.timeline({
     defaults: { duration: 0.25, ease: 'power2.inOut' },
     paused: true,
     reversed: true,
   });
 
-  tlButtonOpen
+  tlButtonAnimation
     .to(lines, { scaleX: 1, transformOrigin: '50% 50%' })
     .to(topLine, { rotation: 45 }, 'rotation')
     .to(bottomLine, { rotation: -45 }, 'rotation');
 
+  function addCloseListener() {
+    document.addEventListener('keydown', closeContact);
+    closeButtonContainer.addEventListener('click', closeContact);
+  }
+
   function openContact() {
     const tlOpen = gsap.timeline({ onComplete: addCloseListener });
-
-    function addCloseListener() {
-      document.addEventListener('keydown', closeContact);
-      closeButtonContainer.addEventListener('click', closeContact);
-    }
 
     tlOpen
       .add('slideIn', 0)
@@ -122,9 +128,7 @@ function openForm() {
         },
         '-=.2'
       )
-      .call(() => {
-        animationOnClick();
-      })
+      .call(animationOnClick, null)
       .call(focusTrapEnable, null)
       .set(formGroups, { clearProps: 'all' }, 2);
   }
@@ -140,12 +144,15 @@ function openForm() {
     function actionsOnComplete() {
       contactSection.hidden = true;
       gsap.set(formGroups, { clearProps: 'all' });
+      // form-response-animation script set this values if is executed (when form is submitted)
+      contactTitle.hidden == true ? (contactTitle.hidden = false) : '';
+      contactForm.hidden == true ? (contactForm.hidden = false) : '';
+      successContainer.hidden == false ? (successContainer.hidden = true) : '';
+      failureContainer.hidden == false ? (failureContainer.hidden = true) : '';
     }
 
     tlClose
-      .call(() => {
-        animationOnClick();
-      })
+      .call(animationOnClick, null)
       .to(
         closeButtonContainer,
         {

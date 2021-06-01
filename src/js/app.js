@@ -112,9 +112,9 @@ function initLoader() {
     .from(loaderLogotype, { yPercent: 100 });
 
   tlLoaderOut
-    .to(loaderLogotypeMask, { yPercent: -300 }, 0)
-    .to(loader, { yPercent: -100 }, 0.2)
-    .from('.wrapper', { y: 150 }, 0.2);
+    // .addPause(.1)
+    .to(loaderLogotypeMask, { duration: 1, yPercent: -300 })
+    .to(loader, { yPercent: -100 }, 0.1);
 }
 
 function initFunctions() {

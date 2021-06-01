@@ -45,6 +45,10 @@
       background-blend-mode: luminosity;
       animation: infinite-scoll-Y 80s linear infinite;
       animation-play-state: paused;
+
+      will-change: transform;
+      transform: translateZ(0);
+      backface-visibility: hidden;
     } // -> .works__container
   }
 } // -> .works

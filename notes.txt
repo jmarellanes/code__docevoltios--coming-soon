@@ -3,13 +3,20 @@ done > -- Portfolio Images
 done > -- Color blend mode on Portfolio Image
 done > -- Intro Animation
 done > -- Fix Portfolio Image on vertical resolutions
-done -- Ajax request when sending contact form
-done -- IMPORTANT > Bug Send Button animation on less than 800px
-done -- h1 - line height
-done -- Intro Animation
-done -- Remove Scroll in loading animation
+done > -- Ajax request when sending contact form
+done > -- IMPORTANT > Bug Send Button animation on less than 800px
+done > -- h1 - line height
+done > -- Intro Animation
+done > -- Remove Scroll in loading animation
+done > -- Quitar la animaci�n y background-color a la m�scara y solo dejar la im�gen
+done > -- Probar position: absolute en el span de works image para ver si mejora el rendimiento
 
 > DESPUES DE LANZAR
+-- Cambiar color DoceVoltios: opuesto, tercios?
+-- Lighthouse for DoceVoltios - Install locally
+-- Scroll to top when sending form (large height devices)
+-- Three dots (rays) animation when loading images on intro page
+-- Add time after actions ex: Cuando envías la forma agregar una pausa de .3 ms o algo así para darle timepo al usuario de ver lo que pasa. Igual al dar click o touch en el botón principal
 -- Check Animations Performance
 -- Send Button on Failure send
 -- Fix SVG icon on loading screen

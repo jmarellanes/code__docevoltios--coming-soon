@@ -29,6 +29,6 @@
     "yargs": "^16.2.0"
   },
   "dependencies": {
-    "postcss": "^8.2.8"
+    "postcss": "^8.3.5"
   }
 }

@@ -104,7 +104,7 @@ function homeAnimation() {
     .fromTo(
       worksImg,
       { autoAlpha: 1, scale: 1.2, transformOrigin: 'top' },
-      { autoAlpha: 1, scale: 1, ease: 'expoScale(1.2, 1)', duration: 1.4 },
+      { autoAlpha: 1, scale: 1, ease: 'expoScale(1.2, 1)', duration: 1.3 },
       'revealImage'
     )
     .add(calculateWorksHeight, '-=.4');

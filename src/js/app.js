@@ -113,9 +113,9 @@ function initLoader() {
   tlLoaderOut
     // .addPause(0.0001) // For debugging
     .to(loaderLogotypeMask, { duration: 1.3, yPercent: -300 })
-    .to(loader, { duration: 1.4, top: '-104%' }, 0.1)
+    .to(loader, { duration: 1.4, top: '-100%' }, 0.1)
     .add('hiddeLoader', null)
-    .to(loader, { duration: 0.2, autoAlpha: 0 }, 'hiddeLoader')
+    .to(loader, { duration: 0.1, autoAlpha: 0 }, 'hiddeLoader')
     .add(homeAnimation, 'hiddeLoader')
     .call(() => {
       loader.hidden = true;

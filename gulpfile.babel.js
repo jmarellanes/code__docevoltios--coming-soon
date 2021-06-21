@@ -24,6 +24,7 @@ export const serve = (done) => {
     host: 'docevoltios.local',
     open: 'external',
     // https: true,
+    notify: false,
   });
   done();
 };

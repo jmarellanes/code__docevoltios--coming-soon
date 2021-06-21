@@ -113,8 +113,13 @@ function initLoader() {
   tlLoaderOut
     // .addPause(0.0001) // For debugging
     .to(loaderLogotypeMask, { duration: 1.3, yPercent: -300 })
-    .to(loader, { duration: 1.4, top: '-102%' }, 0.1)
-    .add(homeAnimation, null);
+    .to(loader, { duration: 1.4, top: '-104%' }, 0.1)
+    .add('hiddeLoader', null)
+    .to(loader, { duration: 0.2, autoAlpha: 0 }, 'hiddeLoader')
+    .add(homeAnimation, 'hiddeLoader')
+    .call(() => {
+      loader.hidden = true;
+    });
 }
 
 function initFunctions() {

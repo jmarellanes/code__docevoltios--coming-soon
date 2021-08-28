@@ -28,7 +28,7 @@
 
     height: 100%;
     width: 100%;
-    background-color: var(--color-secondary);
+    // background-color: var(--color-secondary);
 
     span {
       opacity: 0;
@@ -37,14 +37,18 @@
       height: inherit;
       width: inherit;
       display: block;
-      background-image: url('../images/portfolio.webp');
+      background-image: url('../images/portfolio--color.webp');
       background-repeat: repeat-y;
       background-position: left bottom;
       background-size: 100%;
-      background-color: var(--color-secondary);
-      background-blend-mode: luminosity;
+      // background-color: var(--color-secondary);
+      // background-blend-mode: luminosity;
       animation: infinite-scoll-Y 80s linear infinite;
       animation-play-state: paused;
+
+      will-change: transform;
+      transform: translateZ(0);
+      backface-visibility: hidden;
     } // -> .works__container
   }
 } // -> .works

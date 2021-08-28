@@ -95,7 +95,6 @@ function initLoader() {
   // GSAP Timelines
   const tlLoaderIn = gsap.timeline({
     defaults: {
-      duration: 0.8,
       ease: 'power2.out',
     },
     delay: 0.5,
@@ -103,27 +102,30 @@ function initLoader() {
   });
 
   const tlLoaderOut = gsap.timeline({
-    defaults: { duration: 1, ease: 'power2.in' },
-    delay: 1,
+    defaults: { ease: 'power3.in' },
+    delay: 1.2,
   });
 
   tlLoaderIn
     .set([loaderLogotype, loaderLogotypeMask], { autoAlpha: 1 })
-    .from(loaderLogotype, { yPercent: 100 });
+    .from(loaderLogotype, { duration: 0.6, yPercent: 100 });
 
   tlLoaderOut
-    .to(loaderLogotypeMask, { yPercent: -300 }, 0)
-    .to(loader, { yPercent: -100 }, 0.2)
-    .from('.wrapper', { y: 150 }, 0.2);
+    // .addPause(0.0001) // For debugging
+    .to(loaderLogotypeMask, { duration: 1.3, yPercent: -300 })
+    .to(loader, { duration: 1.4, top: '-100%' }, 0.1)
+    .add('hiddeLoader', null)
+    .to(loader, { duration: 0.1, autoAlpha: 0 }, 'hiddeLoader')
+    .add(homeAnimation, 'hiddeLoader')
+    .call(() => {
+      loader.hidden = true;
+    });
 }
 
 function initFunctions() {
   select('body').classList.remove('is-loading');
   openForm();
   validateForm();
-  setTimeout(() => {
-    homeAnimation();
-  }, 700);
 }
 
 // no window.addEventListener('load') because we are using imagesLoaded for preloading

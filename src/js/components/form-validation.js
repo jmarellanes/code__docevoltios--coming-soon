@@ -1,4 +1,4 @@
-import { successSend } from '../partials/form-response-animation';
+import { successSend, failureSend } from '../partials/form-response-animation';
 
 function validateForm() {
   // TODO: Add "x" icon to error messages.
@@ -259,14 +259,11 @@ function validateForm() {
         hasErrors.focus();
       } else {
         event.preventDefault();
-        // Otherwise, let the form submit normally
-        // You could also bolt in an Ajax form submit process here
         let formData = new FormData(form);
 
         function handleErrors(response) {
           if (!response.ok) {
-            console.log('Not ok');
-            throw Error('Wrpng');
+            throw Error(response.statusText);
           }
           return response;
         }
@@ -277,13 +274,12 @@ function validateForm() {
           body: new URLSearchParams(formData).toString(),
         })
           .then(handleErrors)
-          .then(function (response) {
-            return successSend(response);
+          .then(() => {
+            return successSend();
           })
           .catch((error) => {
-            event.preventDefault();
             console.log('error is', error);
-            return successSend();
+            return failureSend();
           });
       }
     },

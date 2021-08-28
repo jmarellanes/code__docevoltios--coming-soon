@@ -59,30 +59,31 @@ function homeAnimation() {
     });
 
   tlHome
-    // .addPause(0.0001)
-    .set([headerMask, mainTitle], { autoAlpha: 1 })
-    .add('revealChars', 0)
+    // .addPause(0.3) // For debugging
+    .set([headerMask, mainTitle, worksMask], { autoAlpha: 1 })
+    .add('revealImage', 0.1)
+    .add('revealChars', 0.2)
+    .add('revealHeaderAndContent', 0.3)
     .staggerFromTo(
       '.actions__lines1 .actions__chars',
-      0.2,
-      { y: 140 },
+      0.4,
+      { y: 175 },
       { y: 0, ease: 'power1.out' },
       0.1,
       'revealChars'
     )
     .staggerFromTo(
       '.actions__lines2 .actions__chars',
-      0.2,
-      { y: 140 },
+      0.4,
+      { y: 175 },
       { y: 0, ease: 'power1.out' },
       0.1,
       'revealChars+=.2'
     )
-    .add('revealHeaderAndContent', 0.2)
     .fromTo(
       headerElements,
       { autoAlpha: 0, yPercent: -30 },
-      { autoAlpha: 1, yPercent: 0, duration: 0.8 },
+      { autoAlpha: 1, yPercent: 0, duration: 1 },
       'revealHeaderAndContent'
     )
     .fromTo(
@@ -91,24 +92,22 @@ function homeAnimation() {
       { autoAlpha: 1, y: 0, duration: 0.8 },
       'revealHeaderAndContent+=.2'
     )
-    .add('revealImage', 0.4)
     .fromTo(
       worksMask,
-      { autoAlpha: 1, yPercent: -100, scaleY: 0.6, transformOrigin: 'top' },
+      { autoAlpha: 1, yPercent: -100, transformOrigin: 'top' },
       {
         yPercent: 0,
-        scaleY: 1,
-        duration: 1,
+        duration: 1.6,
       },
       'revealImage'
     )
     .fromTo(
       worksImg,
-      { scale: 1.3, autoAlpha: 1, transformOrigin: 'center' },
-      { scale: 1, ease: 'expoScale(1.3, 1)', duration: 0.9 },
+      { autoAlpha: 1, scale: 1.2, transformOrigin: 'top' },
+      { autoAlpha: 1, scale: 1, ease: 'expoScale(1.2, 1)', duration: 1.3 },
       'revealImage'
     )
-    .add(calculateWorksHeight, '-=.1');
+    .add(calculateWorksHeight, '-=.4');
 }
 
 export { homeAnimation };

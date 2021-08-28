@@ -5,6 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>DoceVoltios - Coming Soon</title>
+    <link
+      rel="preload"
+      href="/fonts/biorhyme-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/spacemono-bolditalic.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/spacemono-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/spacemono-italic.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/worksans-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
     <link rel="preload" href="css/app.css" as="style" />
     <link rel="stylesheet" href="css/app.css" />
     <script src="https://unpkg.com/@barba/core"></script>
@@ -17,7 +53,7 @@
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/EasePack.min.js"></script>
-    <script src="http://yourjavascript.com/16552150628/splittext-min.js"></script>
+    <script src="vendor/split-text.min.js"></script>
     <script src="js/app.js" defer></script>
   </head>
   <body class="is-loading" data-barba="wrapper">
@@ -105,9 +141,9 @@
               <!-- figure > .testimonial -->
             </dd>
             <!-- dd > .actions__item-read -->
-            <dd class="actions__item actions__item--play">
+            <!-- TODO: Accessibility for Play button -->
+            <!-- <dd class="actions__item actions__item--play">
               Play a fun game that I coded
-              <!-- TODO: Accessibility for button -->
               <button
                 class="button button__secondary"
                 aria-labelledby="button-label__play-game"
@@ -128,7 +164,7 @@
                   >Click to play a game!</span
                 >
               </button>
-            </dd>
+            </dd> -->
             <!-- dd > .actions__item-play -->
           </dl>
           <!-- dl > .actions__container -->
@@ -141,7 +177,7 @@
           <span></span>
           <div hidden>
             <img
-              src="images/portfolio.webp"
+              src="images/portfolio--color.webp"
               alt="Image showing portfolio works"
             />
           </div>
@@ -231,11 +267,12 @@
               src="images/success-message.png"
               class="form__success-image"
               alt="Image for Success Message"
+              loading="lazy"
             />
             <p class="form__success-title">You're the real deal!</p>
             <p class="form__success-text">
-              Thanks, I'm reading your message right now... ok, no, but I will
-              do it very soon. Expect an answer ASAP!
+              Thanks, I'm reading your message right now... ok, no yet, but I
+              will do it very soon. Expect an answer ASAP!
             </p>
           </div>
 
@@ -244,6 +281,7 @@
               src="images/failure-message.png"
               class="form__failure-image"
               alt="Image for Failure Message"
+              loading="lazy"
             />
             <p class="form__failure-title">Dang it! Something went wrong</p>
             <p class="form__failure-text">

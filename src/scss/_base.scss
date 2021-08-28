@@ -48,6 +48,10 @@ body {
 /* =====================================================================
   -> HIDE CONTENT
 ===================================================================== */
+[hidden] {
+  display: none !important;
+}
+
 /*
  * Based on:
  * Utility class to hide content visually while keeping it screen reader-accessible.

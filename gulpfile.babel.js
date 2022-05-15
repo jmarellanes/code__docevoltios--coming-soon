@@ -1,30 +1,38 @@
 import { src, dest, watch, series, parallel } from 'gulp';
 import yargs from 'yargs';
-import sass from 'gulp-sass';
+import gulpSass from 'gulp-sass';
+import nodeSass from 'node-sass';
 import cleanCss from 'gulp-clean-css';
 import gulpif from 'gulp-if';
 import postcss from 'gulp-postcss';
 import sourcemaps from 'gulp-sourcemaps';
 import autoprefixer from 'autoprefixer';
-import imagemin from 'gulp-imagemin';
 import del from 'del';
 import webpack from 'webpack-stream';
 import browserSync from 'browser-sync';
 import embedSVG from 'gulp-embed-svg';
 
-// TODO: HTML Includes: https://dev.to/caiojhonny/html-includes-with-gulp-js-2def
-// TODO: Add paths, example: 1) https://css-tricks.com/just-sharing-my-gulpfile/ + 2) https://www.sitepoint.com/introduction-gulp-js/
-
 const PRODUCTION = yargs.argv.prod;
 const autoReload = browserSync.create();
+const sass = gulpSass(nodeSass);
+
+// export const serve = (done) => {
+//   autoReload.init({
+//     proxy: 'http://localhost',
+//     host: 'docevoltios.local',
+//     open: 'external',
+//     // https: true,
+//     notify: false,
+//   });
+//   done();
+// };
 
 export const serve = (done) => {
   autoReload.init({
-    proxy: 'http://localhost',
-    host: 'docevoltios.local',
-    open: 'external',
-    // https: true,
-    notify: false,
+    server: {
+      browser: '/mnt/c/Program Files/Firefox Developer Edition/firefox.exe',
+      baseDir: 'dist/',
+    },
   });
   done();
 };
@@ -54,9 +62,9 @@ export const inlineSVG = () => {
 };
 
 export const images = () => {
-  return src('src/images/**/*.{jpg,jpeg,png,svg,gif,webp}')
-    .pipe(gulpif(PRODUCTION, imagemin()))
-    .pipe(dest('dist/images'));
+  return src('src/images/**/*.{jpg,jpeg,png,svg,gif,webp}').pipe(
+    dest('dist/images')
+  );
 };
 
 export const copy = () => {
